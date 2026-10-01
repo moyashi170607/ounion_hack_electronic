@@ -1,10 +1,13 @@
-#include <Adafruit_GFX.h>
-#include <Adafruit_ST7735.h>
 #include <Arduino.h>
-#include <BackgroundAudio.h>
-#include <SPI.h>
 
-void setup() {}
+#include "display/display.hpp"
+#include "i2s_speaker/i2s_speaker.hpp"
+
+void setup() {
+    // LCD周りの初期化
+    setup_display();
+    tft.setCursor(0, 0);
+}
 
 void loop() {
     // put your main code here, to run repeatedly:
