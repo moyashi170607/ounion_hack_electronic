@@ -4,12 +4,12 @@
 
 #include "pins.hpp"
 
-Adafruit_ST7735 tft(&TFT_SPI, TFT_CS, TFT_DC, TFT_RST);
+Adafruit_ST7735 tft(&pins::kTftSpi, pins::kTftCs, pins::kTftDc, pins::kTftRst);
 
 void setup_display() {
-    TFT_SPI.setSCK(TFT_SCK);
-    TFT_SPI.setTX(TFT_MOSI);
-    TFT_SPI.setRX(NOPIN);
+    pins::kTftSpi.setSCK(pins::kTftSck);
+    pins::kTftSpi.setTX(pins::kTftMosi);
+    pins::kTftSpi.setRX(NOPIN);
 
     tft.initR(INITR_BLACKTAB);
     tft.setRotation(1);
