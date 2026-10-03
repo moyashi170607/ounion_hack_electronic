@@ -3,51 +3,53 @@
 
 #include <Arduino.h>
 #include <LittleFS.h>
+#include <dr_wav.h>
 
-// BackgroundAudioWAV は fmt チャンクサイズ16の PCM ヘッダしか受け付けないため、
-// ファイルを解析して44バイトの標準ヘッダを作り直し、ヘッダ → データの順に返す
 class WavFile {
    public:
+    WavFile() = default;
+    ~WavFile() { close(); }
+
+    // wav_ が &file_ を握っているのでコピー禁止
+    WavFile(const WavFile&) = delete;
+    WavFile& operator=(const WavFile&) = delete;
+
     /// @brief Wavファイルを開く
     /// @param path WavファイルのLittleFS上でのパス
     /// @return 開けたかどうか。失敗時は内部で close する
     bool open(const char* path);
 
-    void close() { file_.close(); }
-    bool isOpen() const { return static_cast<bool>(file_); }
+    void close();
+    bool isOpen() const { return opened_; }
 
-    /// @brief 再生位置を先頭に戻す
-    /// @details ループ再生用。次の read() はヘッダから返す
-    void rewind();
+    /// @brief 再生位置を先頭フレームに戻す
+    bool rewind() { return drwav_seek_to_pcm_frame(&wav_, 0); }
+    /// @brief 16bit符号付きに変換して最大 frames フレーム読む
+    /// @param buf frames * channels() 個の int16_t が入る領域（ステレオは L, R
+    /// の交互）
+    /// @return 読めたフレーム数。0 なら終端
+    uint64_t readFramesS16(int16_t* buf, uint64_t frames) {
+        return drwav_read_pcm_frames_s16(&wav_, frames, buf);
+    }
 
-    /// @brief 標準化した44バイトヘッダ → data チャンクの順に、続きを最大
-    /// lenバイト返す
-    /// @param buf 読み込んだ内容を展開するメモリ
-    /// @param len 読み込む最大バイト数
-    /// @return buf に書き込んだバイト数。0 なら終端
-    size_t read(uint8_t* buf, size_t len);
-
-    /// @brief data チャンクの続きだけを最大 len バイト返す（ヘッダは返さない）
-    size_t readData(uint8_t* buf, size_t len);
-
-    uint16_t channels() const { return channels_; }
-    uint16_t bitsPerSample() const { return bitsPerSample_; }
-    uint32_t sampleRate() const { return sampleRate_; }
-    uint32_t dataSize() const { return dataSize_; }
+    uint16_t channels() const { return wav_.channels; }
+    uint32_t sampleRate() const { return wav_.sampleRate; }
+    uint64_t totalFrames() const { return wav_.totalPCMFrameCount; }
 
    private:
-    bool parse();
-
     File file_;
-    uint8_t header_[44];
-    uint32_t dataStart_ = 0;      // ファイル内の音声データ開始位置
-    uint32_t dataSize_ = 0;       // 音声データのバイト数
-    uint32_t headerSent_ = 0;     // header_ のうち返却済みのバイト数
-    uint32_t dataRemaining_ = 0;  // 今回の周回で残っているバイト数
+    drwav wav_{};
+    bool opened_ = false;
 
-    uint16_t channels_ = 0;
-    uint16_t bitsPerSample_ = 0;
-    uint32_t sampleRate_ = 0;
+    // dr_wav から呼ばれる File への読み書き
+    static size_t onRead(void* user, void* buf, size_t len);
+    // 読む位置の変更
+    // origin: DRWAV_SEEK_SET=先頭から / DRWAV_SEEK_CUR=現在位置から /
+    // DRWAV_SEEK_END=末尾から
+    static drwav_bool32 onSeek(void* user, int offset,
+                               drwav_seek_origin origin);
+    // 現在の読み込み位置を取得
+    static drwav_bool32 onTell(void* user, drwav_int64* cursor);
 };
 
 #endif  // WAV_HPP

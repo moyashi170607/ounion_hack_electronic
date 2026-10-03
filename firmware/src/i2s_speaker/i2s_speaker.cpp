@@ -13,19 +13,16 @@ namespace {
 
 I2S i2s(OUTPUT);
 
+/// @brief I2S へは kSampleRate の何倍で出すか
+/// @note PCM5102A は 22.05kHz を正式にサポートしておらず無音になることがあるので、
+///       各サンプルを2回ずつ送って 44.1kHz で出す
+constexpr uint32_t kOversample = 2;
+
 /// @brief pos フレーム目を16bitの L/R にそろえて取り出す
 void read_frame(const Track& tr, uint32_t pos, int32_t& l, int32_t& r) {
-    const uint32_t i = pos * tr.channels;
-    if (tr.bits == 8) {
-        // 8bit WAV は符号なし（無音 = 128）なので中心を0にずらして256倍
-        const uint8_t* p = static_cast<const uint8_t*>(tr.data);
-        l = (p[i] - 128) * 256;
-        r = (tr.channels == 2) ? (p[i + 1] - 128) * 256 : l;
-    } else {
-        const int16_t* p = static_cast<const int16_t*>(tr.data);
-        l = p[i];
-        r = (tr.channels == 2) ? p[i + 1] : l;
-    }
+    const int16_t* p = tr.data + pos * tr.channels;
+    l = p[0];
+    r = (tr.channels == 2) ? p[1] : l;
 }
 
 }  // namespace
@@ -37,31 +34,33 @@ bool load_track(size_t t, const char* path) {
     if (!wav.open(path)) return false;
 
     // ミキサーは kSampleRate 固定で回すので、違うレートだと再生速度が狂う
-    if (wav.sampleRate() != kSampleRate) {
-        wav.close();
-        return false;
-    }
+    if (wav.sampleRate() != kSampleRate) return false;
 
-    // malloc は8バイト境界なので int16_t として読んでも安全
-    const uint32_t size = wav.dataSize();
-    uint8_t* buf = static_cast<uint8_t*>(malloc(size));
-    if (!buf) {
-        wav.close();
-        return false;
-    }
-    const size_t n = wav.readData(buf, size);
-    wav.close();
-    if (n != size) {
+    const uint16_t channels = wav.channels();
+
+    // チャンネル数が1か2でなければ弾く
+    if (channels < 1 || channels > 2) return false;
+
+    const uint64_t frames = wav.totalFrames();
+    // フレームが0なら弾く
+    if (frames == 0) return false;
+
+    int16_t* buf =
+        static_cast<int16_t*>(malloc(frames * channels * sizeof(int16_t)));
+    if (!buf) return false;
+
+    // dr_wavで16bit符号付きにそろえる
+    const uint64_t n = wav.readFramesS16(buf, frames);
+    if (n == 0) {
         free(buf);
         return false;
     }
 
     Track& tr = tracks[t];
     tr.data = buf;
-    tr.channels = wav.channels();
-    tr.bits = wav.bitsPerSample();
-    tr.frames = size / (tr.channels * tr.bits / 8);
-    tr.pos = tr.frames;  // 停止状態から始める
+    tr.channels = channels;
+    tr.frames = n;
+    tr.pos = n;  // 停止状態から始める
     return true;
 }
 
@@ -70,7 +69,7 @@ void audio_setup() {
     i2s.setDATA(pins::kDacDin);
     i2s.setBitsPerSample(16);
     i2s.setBuffers(4, 64);  // 小さいほど遅延が短い
-    i2s.begin(kSampleRate);
+    i2s.begin(kSampleRate * kOversample);
 }
 
 void audio_loop() {
@@ -88,14 +87,17 @@ void audio_loop() {
 
     int32_t mixL = 0;
     int32_t mixR = 0;
-    for (auto& tr : tracks) {
+    for (Track& tr : tracks) {
         if (tr.pos >= tr.frames) continue;
         int32_t l, r;
         read_frame(tr, tr.pos++, l, r);
+
+        // 256で割ることで割合に戻している
         mixL += (l * tr.gain) >> 8;
         mixR += (r * tr.gain) >> 8;
     }
     mixL = constrain(mixL, -32767, 32767);
     mixR = constrain(mixR, -32767, 32767);
-    i2s.write16(mixL, mixR);  // バッファが空くまで待つ
+    // バッファが空くまで待つ
+    for (uint32_t i = 0; i < kOversample; i++) i2s.write16(mixL, mixR);
 }

@@ -5,12 +5,12 @@
 
 /// @brief 1トラック分の音データと再生状態
 struct Track {
-    const void* data = nullptr;  // PCMデータ（WAVのdataチャンクそのまま）
-    uint32_t frames = 0;         // フレーム数（ステレオは L/R の組で1）
-    uint32_t pos = 0;            // 再生位置[フレーム]。frames 以上なら停止中
-    uint8_t channels = 1;        // 1: モノラル, 2: ステレオ（L, R の交互）
-    uint8_t bits = 16;           // 8: 符号なし, 16: 符号付き
-    int32_t gain = 256;          // 256 = 1.0
+    const int16_t* data =
+        nullptr;           // 16bit符号付きPCM（ステレオは L, R の交互）
+    uint32_t frames = 0;   // フレーム数（ステレオは L/R の組で1）
+    uint32_t pos = 0;      // 再生位置[フレーム]。frames 以上なら停止中
+    uint8_t channels = 1;  // 1: モノラル, 2: ステレオ（L, R の交互）
+    int32_t gain = 256;    // 256 = 1.0
 };
 
 /// @brief サンプリング周波数 [Hz]
