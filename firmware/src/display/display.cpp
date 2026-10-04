@@ -1,5 +1,6 @@
 #include "display.hpp"
 
+#include <Adafruit_ST7735.h>
 #include <SPI.h>
 
 #include "pins.hpp"
