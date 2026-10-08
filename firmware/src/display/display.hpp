@@ -17,10 +17,10 @@ void setup_display();
 struct StepBox {
     int16_t x;           // 四角形の左上角のx座標
     int16_t y;           // 四角形の左上角のy座標
-    int16_t weight;      // 四角形の幅
+    int16_t width;       // 四角形の幅
     int16_t height;      // 四角形の高さ
     uint16_t on_color;   // そのstepの音が鳴っているときの色
-    uint16_t off_color;  // そのstepの音が鳴っているときの色
+    uint16_t off_color;  // そのstepの音が止んでいるときの色
 };
 
 #endif  // DISPLAY_HPP
