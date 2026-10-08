@@ -26,11 +26,11 @@ constexpr pin_size_t kDacLck =
 constexpr pin_size_t kDacDin = 22;  // DIN
 
 // スイッチのピン
-constexpr pin_size_t kSwt1 = 21;
-constexpr pin_size_t kSwt2 = 22;
-constexpr pin_size_t kSwt3 = 24;
-constexpr pin_size_t kSwt4 = 25;
-constexpr pin_size_t kSwt5 = 31;
+constexpr pin_size_t kSwt1 = 16;
+constexpr pin_size_t kSwt2 = 17;
+constexpr pin_size_t kSwt3 = 18;
+constexpr pin_size_t kSwt4 = 19;
+constexpr pin_size_t kSwt5 = 26;
 
 // マトリックスLEDのピン
 constexpr pin_size_t kLedCols[] = {0, 1, 2, 3, 4};
