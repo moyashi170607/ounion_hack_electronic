@@ -21,6 +21,13 @@ constexpr pin_size_t kDacLck =
     kDacBck + 1;                    // LCK (BCK+1 に自動で割り当てられる)
 constexpr pin_size_t kDacDin = 22;  // DIN
 
+// スイッチのピン
+constexpr pin_size_t kSwt1 = 21;
+constexpr pin_size_t kSwt2 = 22;
+constexpr pin_size_t kSwt3 = 24;
+constexpr pin_size_t kSwt4 = 25;
+constexpr pin_size_t kSwt5 = 31;
+
 }  // namespace pins
 
 #endif  // PINS_HPP

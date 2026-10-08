@@ -17,10 +17,10 @@ struct Track {
 constexpr uint32_t kSampleRate = 22050;
 
 /// @brief トラック数
-constexpr size_t kTracks = 4;
+constexpr size_t kTracks = 5;
 
 /// @brief ステップ数
-constexpr size_t kSteps = 8;
+constexpr size_t kSteps = 16;
 
 /// @brief 各トラックの音データと再生位置
 /// @note pos は loop1（コア1）が進める
