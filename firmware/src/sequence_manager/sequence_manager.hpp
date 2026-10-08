@@ -11,4 +11,8 @@ enum class Button : uint8_t {
     SOUND4,
 }
 
+/// @brief ボタンが押されたことを受け取る
+/// @param button 
+void pressed_switch(Button button);
+
 #endif  // SEQUENCE_MANAGER_HPP
