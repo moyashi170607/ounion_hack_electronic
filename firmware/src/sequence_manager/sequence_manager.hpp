@@ -9,6 +9,10 @@ constexpr size_t kTracks = 5;
 /// @brief ステップ数
 constexpr size_t kSteps = 16;
 
+/// @brief テンポ [BPM]。1ステップは16分音符
+/// @note コア0が書き、コア1が読む
+extern volatile uint16_t bpm;
+
 enum class Button : uint8_t {
     SOUND0,
     SOUND1,

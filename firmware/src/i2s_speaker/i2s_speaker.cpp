@@ -7,14 +7,14 @@
 
 Track tracks[kTracks];
 volatile bool pattern[kTracks][kSteps];
-volatile uint16_t bpm = 120;
 
 namespace {
 
 I2S i2s(OUTPUT);
 
 /// @brief I2S へは kSampleRate の何倍で出すか
-/// @note PCM5102A は 22.05kHz を正式にサポートしておらず無音になることがあるので、
+/// @note PCM5102A は 22.05kHz
+/// を正式にサポートしておらず無音になることがあるので、
 ///       各サンプルを2回ずつ送って 44.1kHz で出す
 constexpr uint32_t kOversample = 2;
 

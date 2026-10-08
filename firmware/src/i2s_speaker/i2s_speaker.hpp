@@ -26,9 +26,6 @@ extern Track tracks[kTracks];
 /// @note コア0が書き、コア1が読む
 extern volatile bool pattern[kTracks][kSteps];
 
-/// @brief テンポ [BPM]。1ステップは16分音符
-extern volatile uint16_t bpm;
-
 /// @brief WAVファイルをRAMに読み込んで tracks[t] に割り当てる関数
 /// @note audio_setup() より前に呼ぶ
 bool load_track(size_t t, const char* path);
