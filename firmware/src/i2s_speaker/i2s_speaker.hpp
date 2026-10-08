@@ -3,6 +3,8 @@
 
 #include <Arduino.h>
 
+#include "sequence_manager/sequence_manager.hpp"
+
 /// @brief 1トラック分の音データと再生状態
 struct Track {
     const int16_t* data =
@@ -15,12 +17,6 @@ struct Track {
 
 /// @brief サンプリング周波数 [Hz]
 constexpr uint32_t kSampleRate = 22050;
-
-/// @brief トラック数
-constexpr size_t kTracks = 5;
-
-/// @brief ステップ数
-constexpr size_t kSteps = 16;
 
 /// @brief 各トラックの音データと再生位置
 /// @note pos は loop1（コア1）が進める
