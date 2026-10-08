@@ -2,6 +2,7 @@
 
 #include "display/display.hpp"
 #include "i2s_speaker/i2s_speaker.hpp"
+#include "sequence_manager/sequence_manager.hpp"
 
 void setup() {
     // LCD周りの初期化
