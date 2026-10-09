@@ -5,6 +5,164 @@
 	(uuid "c3fc6e3f-150c-4e91-b750-21ca7e978f7f")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x08"
 			(pin_names
 				(offset 1.016)
@@ -2520,6 +2678,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 109.22 88.9)
@@ -2574,6 +2847,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5bc2ece2-9624-44bf-b374-f29c154f1bc4")
+	)
+	(junction
+		(at 264.16 25.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5e49961f-be1f-43f5-9190-375797a48d9d")
 	)
 	(junction
 		(at 102.87 26.67)
@@ -2660,12 +2939,6 @@
 		(uuid "c858b679-d32c-41d7-8b05-cbef2a0f6a45")
 	)
 	(junction
-		(at 219.71 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c905f53d-61d7-4bb8-9c33-8d488029daa5")
-	)
-	(junction
 		(at 102.87 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2678,12 +2951,6 @@
 		(uuid "cd09197b-1614-4a10-afce-7a49e6b74a48")
 	)
 	(junction
-		(at 234.95 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d2fb6094-bbc7-4378-8085-3cbd8ec499b9")
-	)
-	(junction
 		(at 133.35 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2694,12 +2961,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e16b7f86-975a-4847-b77d-6b58e50029d3")
-	)
-	(junction
-		(at 250.19 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e739b7eb-180f-4653-8e05-9f0bd05f027a")
 	)
 	(junction
 		(at 118.11 49.53)
@@ -2720,22 +2981,10 @@
 		(uuid "ea9ee43e-5600-432e-bdc3-cbea0ca96734")
 	)
 	(junction
-		(at 204.47 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ee36e055-f704-4e50-8c24-4d8718b7fecf")
-	)
-	(junction
 		(at 124.46 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f1d565ba-41f4-4c5c-a822-4847d3af70cc")
-	)
-	(junction
-		(at 189.23 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f22ee512-8ec0-454a-a885-fc9762399ad7")
 	)
 	(junction
 		(at 124.46 88.9)
@@ -2750,10 +2999,6 @@
 	(no_connect
 		(at 25.4 39.37)
 		(uuid "300fc4a5-cf84-48e9-915d-795c77c43961")
-	)
-	(no_connect
-		(at 43.18 21.59)
-		(uuid "40e62700-ddcc-41d1-bba3-578283236dca")
 	)
 	(no_connect
 		(at 25.4 80.01)
@@ -2811,23 +3056,13 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 86.36) (xy 250.19 85.09)
+			(xy 248.92 66.04) (xy 248.92 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "0357b336-7de3-4fb1-8770-a70d021c9a61")
-	)
-	(wire
-		(pts
-			(xy 219.71 63.5) (xy 219.71 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06c5655a-e1e0-4261-9f1f-f94449910779")
 	)
 	(wire
 		(pts
@@ -2881,7 +3116,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 86.36) (xy 234.95 85.09)
+			(xy 233.68 66.04) (xy 233.68 64.77)
 		)
 		(stroke
 			(width 0)
@@ -2901,6 +3136,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 19.05) (xy 43.18 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13cee4b9-58b3-45b1-8062-b3f7ed5aadb7")
+	)
+	(wire
+		(pts
 			(xy 191.77 20.32) (xy 198.12 20.32)
 		)
 		(stroke
@@ -2908,16 +3153,6 @@
 			(type default)
 		)
 		(uuid "14d1a137-f66b-4329-bc9c-9cb31acb3012")
-	)
-	(wire
-		(pts
-			(xy 189.23 73.66) (xy 189.23 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "158a1864-260f-4338-abae-60fd972fbf6e")
 	)
 	(wire
 		(pts
@@ -2938,6 +3173,16 @@
 			(type default)
 		)
 		(uuid "1752bbaf-d81b-498c-bdf5-690a58c7e6ae")
+	)
+	(wire
+		(pts
+			(xy 218.44 50.8) (xy 218.44 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17b5bf4e-2454-4fc4-9ce8-edae052774d8")
 	)
 	(wire
 		(pts
@@ -3008,16 +3253,6 @@
 			(type default)
 		)
 		(uuid "283a399c-3b26-4cb2-a144-af4b5703fa53")
-	)
-	(wire
-		(pts
-			(xy 219.71 73.66) (xy 219.71 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2918eaf7-ee7a-4518-827c-d0d7c388c72f")
 	)
 	(wire
 		(pts
@@ -3131,16 +3366,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 63.5) (xy 204.47 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3f170983-78d6-4331-b446-58209d8b593c")
-	)
-	(wire
-		(pts
 			(xy 93.98 72.39) (xy 102.87 72.39)
 		)
 		(stroke
@@ -3148,16 +3373,6 @@
 			(type default)
 		)
 		(uuid "402d2a6a-74b9-467c-8059-c034b27eb5f7")
-	)
-	(wire
-		(pts
-			(xy 250.19 63.5) (xy 250.19 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "410cb2a1-4bb0-4dd5-b74a-0ff6dde015bf")
 	)
 	(wire
 		(pts
@@ -3198,6 +3413,16 @@
 			(type default)
 		)
 		(uuid "4602ccc9-991e-494f-9c4c-a42357cb5290")
+	)
+	(wire
+		(pts
+			(xy 233.68 50.8) (xy 233.68 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47599d47-ca76-4ed9-aefb-f10c3e674b3b")
 	)
 	(wire
 		(pts
@@ -3341,13 +3566,13 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 73.66) (xy 234.95 74.93)
+			(xy 255.27 25.4) (xy 264.16 25.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5aefef1e-5642-4748-a082-c549283821c5")
+		(uuid "612a6db8-a3e6-43b1-8d4e-8c8227b25cb6")
 	)
 	(wire
 		(pts
@@ -3398,6 +3623,16 @@
 			(type default)
 		)
 		(uuid "67402012-5a9f-4697-a850-61add749092e")
+	)
+	(wire
+		(pts
+			(xy 264.16 25.4) (xy 265.43 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67cf398f-0231-4395-8e18-b5dc98363593")
 	)
 	(wire
 		(pts
@@ -3471,26 +3706,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 74.93) (xy 210.82 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71837806-b48a-45d0-9dbe-d66e0b5d9e82")
-	)
-	(wire
-		(pts
-			(xy 219.71 74.93) (xy 226.06 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71b9ae60-867b-4b9e-8319-a8a919794a5c")
-	)
-	(wire
-		(pts
 			(xy 191.77 25.4) (xy 198.12 25.4)
 		)
 		(stroke
@@ -3518,6 +3733,16 @@
 			(type default)
 		)
 		(uuid "798b9fee-b874-4323-b8c1-6ae6be020dba")
+	)
+	(wire
+		(pts
+			(xy 187.96 50.8) (xy 187.96 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b19e96c-9019-41de-8447-375175e2a2d3")
 	)
 	(wire
 		(pts
@@ -3558,16 +3783,6 @@
 			(type default)
 		)
 		(uuid "80b8dfa9-4696-439c-82c8-dca059829a57")
-	)
-	(wire
-		(pts
-			(xy 234.95 74.93) (xy 234.95 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "844d451d-3667-4ff8-9216-9d2686de3d05")
 	)
 	(wire
 		(pts
@@ -3621,27 +3836,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 74.93) (xy 241.3 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88f0538b-79c2-40f0-915c-3d6595655cce")
-	)
-	(wire
-		(pts
-			(xy 219.71 74.93) (xy 219.71 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "89ba5a14-4c56-4a0d-a63e-8d970ebb1c0d")
-	)
-	(wire
-		(pts
-			(xy 219.71 86.36) (xy 219.71 85.09)
+			(xy 218.44 66.04) (xy 218.44 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3651,13 +3846,13 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 74.93) (xy 204.47 77.47)
+			(xy 248.92 50.8) (xy 248.92 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93e2c5b5-15cf-4393-baf9-7369767cad48")
+		(uuid "8d7daee1-3e82-4975-b5a0-9e60f6c719fd")
 	)
 	(wire
 		(pts
@@ -3741,6 +3936,16 @@
 	)
 	(wire
 		(pts
+			(xy 187.96 64.77) (xy 187.96 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9dfb4a73-539f-4b71-ab67-43a5eed3ba87")
+	)
+	(wire
+		(pts
 			(xy 109.22 72.39) (xy 118.11 72.39)
 		)
 		(stroke
@@ -3778,16 +3983,6 @@
 			(type default)
 		)
 		(uuid "a5c23454-da94-4d72-9c62-29e5a57628cf")
-	)
-	(wire
-		(pts
-			(xy 204.47 73.66) (xy 204.47 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a619796e-5cc1-4eb5-8f6e-2154588275db")
 	)
 	(wire
 		(pts
@@ -3831,16 +4026,6 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 86.36) (xy 189.23 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b94332ec-097e-499d-9a3d-427df35cc29f")
-	)
-	(wire
-		(pts
 			(xy 74.93 72.39) (xy 71.12 72.39)
 		)
 		(stroke
@@ -3861,16 +4046,6 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 74.93) (xy 189.23 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bb8dc6de-785a-4f4d-a584-48fba72479fd")
-	)
-	(wire
-		(pts
 			(xy 229.87 27.94) (xy 238.76 27.94)
 		)
 		(stroke
@@ -3888,16 +4063,6 @@
 			(type default)
 		)
 		(uuid "bed4cafb-7acb-4380-8452-ac509dbfdecf")
-	)
-	(wire
-		(pts
-			(xy 189.23 63.5) (xy 189.23 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c0059284-909c-4ff7-aa4f-5d8a756ff0da")
 	)
 	(wire
 		(pts
@@ -4011,26 +4176,6 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 74.93) (xy 256.54 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cec9f0f6-e0b2-42c1-a15b-f7bc49eb73bd")
-	)
-	(wire
-		(pts
-			(xy 189.23 74.93) (xy 195.58 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cf413c2c-429a-40ec-957e-641c3a9e8d6d")
-	)
-	(wire
-		(pts
 			(xy 13.97 67.31) (xy 25.4 67.31)
 		)
 		(stroke
@@ -4081,7 +4226,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 86.36) (xy 204.47 85.09)
+			(xy 203.2 66.04) (xy 203.2 64.77)
 		)
 		(stroke
 			(width 0)
@@ -4098,16 +4243,6 @@
 			(type default)
 		)
 		(uuid "dd29d994-3228-4103-a2e6-c0d28f83d230")
-	)
-	(wire
-		(pts
-			(xy 250.19 74.93) (xy 250.19 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dd9c060e-5e8e-4e43-a758-e0a5aa0846a6")
 	)
 	(wire
 		(pts
@@ -4161,6 +4296,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 50.8) (xy 203.2 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8dfe247-630e-4685-9fa4-9a424353279d")
+	)
+	(wire
+		(pts
 			(xy 71.12 57.15) (xy 74.93 57.15)
 		)
 		(stroke
@@ -4178,6 +4323,16 @@
 			(type default)
 		)
 		(uuid "ed3758ce-041a-42c7-a738-108761811f06")
+	)
+	(wire
+		(pts
+			(xy 255.27 27.94) (xy 265.43 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed5401bb-571b-4570-bec3-adfbae705b18")
 	)
 	(wire
 		(pts
@@ -4211,16 +4366,6 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 63.5) (xy 234.95 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef9b5334-479e-439a-94cf-c045b80d1634")
-	)
-	(wire
-		(pts
 			(xy 102.87 49.53) (xy 102.87 72.39)
 		)
 		(stroke
@@ -4238,16 +4383,6 @@
 			(type default)
 		)
 		(uuid "f7b900c8-9df2-4bb0-91fd-6163a5995a95")
-	)
-	(wire
-		(pts
-			(xy 250.19 73.66) (xy 250.19 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fae30783-4289-47c6-9930-2e8f43b94a6b")
 	)
 	(wire
 		(pts
@@ -4319,6 +4454,16 @@
 		)
 		(uuid "11cc3a38-a38d-414e-b832-3f8f695ab1df")
 	)
+	(label "battery"
+		(at 255.27 25.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1f10fc6a-692a-4652-866d-01fcd5aabede")
+	)
 	(label "LED2"
 		(at 118.11 16.51 0)
 		(effects
@@ -4329,7 +4474,7 @@
 		)
 		(uuid "228971c7-af2c-4cf5-8325-9ab984ce6f10")
 	)
-	(label "SPK2"
+	(label "SPK.LCK"
 		(at 191.77 25.4 0)
 		(effects
 			(font
@@ -4339,7 +4484,7 @@
 		)
 		(uuid "2416a3e0-8bd8-4c1e-9304-e76aba3689cd")
 	)
-	(label "MON.RES"
+	(label "MON.CS"
 		(at 229.87 30.48 0)
 		(effects
 			(font
@@ -4379,7 +4524,7 @@
 		)
 		(uuid "37dc6f9f-7e7a-49aa-b727-52654d8032df")
 	)
-	(label "SPK1"
+	(label "SPK.DIN"
 		(at 74.93 62.23 0)
 		(effects
 			(font
@@ -4399,7 +4544,7 @@
 		)
 		(uuid "3d7655c7-53e2-4128-9c15-518d17212a07")
 	)
-	(label "SPK3"
+	(label "SPK.BCK"
 		(at 191.77 27.94 0)
 		(effects
 			(font
@@ -4410,7 +4555,7 @@
 		(uuid "49123951-77d3-4f6f-878b-4e9928952f61")
 	)
 	(label "SW1"
-		(at 195.58 74.93 0)
+		(at 187.96 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4419,7 +4564,7 @@
 		)
 		(uuid "4b0ad424-1182-4e2f-a8e3-7accb63405e5")
 	)
-	(label "SPK2"
+	(label "SPK.LCK"
 		(at 74.93 59.69 0)
 		(effects
 			(font
@@ -4459,7 +4604,7 @@
 		)
 		(uuid "583249bf-075e-492c-8c44-e0427fd5a4c0")
 	)
-	(label "MON.CS"
+	(label "MON.RES"
 		(at 13.97 77.47 0)
 		(effects
 			(font
@@ -4509,7 +4654,7 @@
 		)
 		(uuid "73b4f062-9080-4f8e-abe2-dd10f9e41609")
 	)
-	(label "MON.CS"
+	(label "MON.RES"
 		(at 229.87 27.94 0)
 		(effects
 			(font
@@ -4519,7 +4664,7 @@
 		)
 		(uuid "7bdc4b4b-d871-4665-8c39-aaa119908e2e")
 	)
-	(label "SPK1"
+	(label "SPK.DIN"
 		(at 191.77 22.86 0)
 		(effects
 			(font
@@ -4529,7 +4674,7 @@
 		)
 		(uuid "7e1b2907-c09d-4e97-bea1-2ed65c0369b0")
 	)
-	(label "SPK3"
+	(label "SPK.BCK"
 		(at 74.93 57.15 0)
 		(effects
 			(font
@@ -4559,7 +4704,7 @@
 		)
 		(uuid "91f640c2-85d1-4446-b8b9-a924a0b536a9")
 	)
-	(label "MON.RES"
+	(label "MON.CS"
 		(at 13.97 82.55 0)
 		(effects
 			(font
@@ -4600,7 +4745,7 @@
 		(uuid "c9da8b58-84b7-4b92-aee5-e41274db5b89")
 	)
 	(label "SW5"
-		(at 256.54 74.93 0)
+		(at 248.92 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4620,7 +4765,7 @@
 		(uuid "cc876c9d-73b0-438e-92a9-f9b269317ae7")
 	)
 	(label "SW3"
-		(at 226.06 74.93 0)
+		(at 218.44 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4630,7 +4775,7 @@
 		(uuid "ceb011e8-d73e-4452-89e4-597edf80fb2c")
 	)
 	(label "SW2"
-		(at 210.82 74.93 0)
+		(at 203.2 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4670,7 +4815,7 @@
 		(uuid "e7d50620-e6e0-4e22-9427-7d75e0c451a8")
 	)
 	(label "SW4"
-		(at 241.3 74.93 0)
+		(at 233.68 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4698,6 +4843,16 @@
 			(justify left bottom)
 		)
 		(uuid "f2f1705a-9360-4c12-b245-c05e7596b7ff")
+	)
+	(label "battery"
+		(at 43.18 19.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f4962f1b-fa16-4e93-b653-de0417a9ada8")
 	)
 	(label "LED3"
 		(at 13.97 49.53 0)
@@ -4833,7 +4988,7 @@
 			(uuid "63608287-9217-489b-be1e-c5afa84fa651")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R14")
 					(unit 1)
@@ -4843,7 +4998,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 250.19 86.36 0)
+		(at 248.92 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4854,7 +5009,7 @@
 		(fields_autoplaced yes)
 		(uuid "0627fbe3-392b-48b9-8aa5-f344f54e524d")
 		(property "Reference" "#PWR022"
-			(at 250.19 92.71 0)
+			(at 248.92 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4865,7 +5020,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 250.19 91.44 0)
+			(at 248.92 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4875,7 +5030,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 250.19 86.36 0)
+			(at 248.92 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4886,7 +5041,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 250.19 86.36 0)
+			(at 248.92 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4897,7 +5052,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 250.19 86.36 0)
+			(at 248.92 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4911,7 +5066,7 @@
 			(uuid "a6a176e7-a02b-4ad4-996b-9555d55f01bd")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR022")
 					(unit 1)
@@ -4993,173 +5148,9 @@
 			(uuid "7c9ad7b9-8f53-4eac-b712-4db7881f58fe")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 204.47 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "09dbfa27-1590-47f2-a0ae-0de1491e19cd")
-		(property "Reference" "R23"
-			(at 207.01 80.0099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 207.01 82.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 202.692 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 204.47 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 204.47 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "9a2895fb-bb5a-46f4-82c6-98e32524abcb")
-		)
-		(pin "1"
-			(uuid "01261a8e-fa65-4286-98e8-ec19746479ea")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "R23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 219.71 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0c0caf0b-5269-4917-9d0b-df94fc7b05aa")
-		(property "Reference" "R24"
-			(at 222.25 80.0099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 222.25 82.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 217.932 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 219.71 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 219.71 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "54c14a61-1e99-40e2-bc0f-4267739128fe")
-		)
-		(pin "1"
-			(uuid "ee8fdb9b-cee8-49dd-b360-3f5b903d3aaa")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -5199,7 +5190,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 149.86 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5250,7 +5241,7 @@
 			(uuid "5c0d2159-02c2-4305-bf76-c0239d0e8b6c")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D15")
 					(unit 1)
@@ -5328,7 +5319,7 @@
 			(uuid "0845bc27-b1ca-4154-b4a1-7ae0c8d3fe7a")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR02")
 					(unit 1)
@@ -5410,7 +5401,7 @@
 			(uuid "86ae5fc9-b0a6-4ad2-bab6-356aeb99ddff")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R18")
 					(unit 1)
@@ -5489,87 +5480,9 @@
 			(uuid "0ac22234-7dc1-477c-8a70-d8c0880a337a")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 204.47 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1cbf239f-3a6d-4631-8fa8-0d93af8a0934")
-		(property "Reference" "#PWR07"
-			(at 204.47 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 204.47 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 204.47 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 204.47 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 204.47 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7bc5bb56-e45d-4be2-a3c4-4bafe15bdc86")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -5609,7 +5522,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 93.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -5660,7 +5573,7 @@
 			(uuid "50c014d8-1e10-45d7-b079-be99c37d0048")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D21")
 					(unit 1)
@@ -5742,7 +5655,7 @@
 			(uuid "a0b1795f-2de6-4854-a123-c77bc63693a9")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R21")
 					(unit 1)
@@ -5752,7 +5665,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 219.71 86.36 0)
+		(at 218.44 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5763,7 +5676,7 @@
 		(fields_autoplaced yes)
 		(uuid "287203a0-7dc7-4c2b-8a31-1a6060146441")
 		(property "Reference" "#PWR018"
-			(at 219.71 92.71 0)
+			(at 218.44 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5774,7 +5687,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 219.71 91.44 0)
+			(at 218.44 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5784,7 +5697,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 219.71 86.36 0)
+			(at 218.44 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5795,7 +5708,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 219.71 86.36 0)
+			(at 218.44 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5806,7 +5719,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 219.71 86.36 0)
+			(at 218.44 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5820,7 +5733,7 @@
 			(uuid "d3d9e64b-01f6-4a48-9939-94060390ad3a")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR018")
 					(unit 1)
@@ -5862,7 +5775,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 93.98 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5913,7 +5826,7 @@
 			(uuid "6e6f4495-9785-4d67-8af0-e5da9c3460c6")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D11")
 					(unit 1)
@@ -5955,7 +5868,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 93.98 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -6006,7 +5919,7 @@
 			(uuid "3dc36dbf-ca2f-4048-9fc5-3ac8fbc9318f")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D16")
 					(unit 1)
@@ -6048,7 +5961,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 149.86 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -6099,7 +6012,7 @@
 			(uuid "71ea054e-8a9f-4ec6-87f7-403058aa2639")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D20")
 					(unit 1)
@@ -6141,7 +6054,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 109.22 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -6192,7 +6105,7 @@
 			(uuid "ae0061b0-cd77-4775-b728-bd622fa17a27")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D17")
 					(unit 1)
@@ -6274,7 +6187,7 @@
 			(uuid "5baac3b0-8602-4ef1-9ef8-c2ba5c37b842")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R5")
 					(unit 1)
@@ -6316,7 +6229,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 93.98 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -6367,91 +6280,9 @@
 			(uuid "41f2db9f-fcbe-4a51-876d-eb9ee0b55840")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 189.23 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4a92403b-2615-46a7-91d4-edb669d2303b")
-		(property "Reference" "R22"
-			(at 191.77 80.0099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 191.77 82.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 187.452 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 189.23 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 189.23 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "2fa2d0a5-916f-41e0-b29e-f35be37d09b0")
-		)
-		(pin "1"
-			(uuid "312909fe-c568-4d1c-acc4-391591f1d7dc")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -6491,7 +6322,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 137.16 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -6542,7 +6373,7 @@
 			(uuid "4cd84a61-4d8a-408a-8efe-2fc0c4643ca8")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D14")
 					(unit 1)
@@ -6621,7 +6452,7 @@
 			(uuid "31bdc0db-0a90-49e1-a03f-83efd5c7a7ad")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR09")
 					(unit 1)
@@ -6663,7 +6494,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 109.22 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -6714,87 +6545,9 @@
 			(uuid "4490b98d-c48c-4083-afdc-07f72c529c28")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 219.71 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "524931c2-b3e9-4919-8233-6e4e1cbcc04c")
-		(property "Reference" "#PWR017"
-			(at 219.71 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 219.71 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 219.71 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 219.71 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 219.71 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "33405f1c-b628-4e7a-a6b9-a9fb34c6841e")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -6874,7 +6627,7 @@
 			(uuid "4191b3f6-98fc-4f51-855d-b71a69c7f5cc")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R12")
 					(unit 1)
@@ -6956,7 +6709,7 @@
 			(uuid "22c3787c-dace-4fea-a2d1-eee4b3a4f27b")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R1")
 					(unit 1)
@@ -7038,7 +6791,7 @@
 			(uuid "114731a8-5536-4945-bd39-c0c16d4d51ad")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R16")
 					(unit 1)
@@ -7080,7 +6833,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 124.46 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -7131,87 +6884,9 @@
 			(uuid "71331ab2-d169-4670-aea0-9a43923ecb56")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 250.19 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "759eae9f-a11b-4a65-9baa-cb7454bc225c")
-		(property "Reference" "#PWR021"
-			(at 250.19 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 250.19 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 250.19 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 250.19 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 250.19 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ac388ad4-33a9-4221-8691-05ddf1f0b93a")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -7251,7 +6926,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 124.46 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -7302,7 +6977,7 @@
 			(uuid "f89a53aa-cb50-4a66-863c-a56d92ad1151")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D13")
 					(unit 1)
@@ -7312,7 +6987,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 204.47 86.36 0)
+		(at 203.2 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7323,7 +6998,7 @@
 		(fields_autoplaced yes)
 		(uuid "885cffe7-b849-4c4f-8c15-d21500ee763c")
 		(property "Reference" "#PWR016"
-			(at 204.47 92.71 0)
+			(at 203.2 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7334,7 +7009,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 204.47 91.44 0)
+			(at 203.2 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7344,7 +7019,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 204.47 86.36 0)
+			(at 203.2 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7355,7 +7030,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 204.47 86.36 0)
+			(at 203.2 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7366,7 +7041,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 204.47 86.36 0)
+			(at 203.2 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7380,7 +7055,7 @@
 			(uuid "4fcd7705-1353-40d5-876a-71cdb3710637")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR016")
 					(unit 1)
@@ -7462,7 +7137,7 @@
 			(uuid "21b8483b-f1fc-4fb2-9974-6ca97cc3197d")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R7")
 					(unit 1)
@@ -7472,7 +7147,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 234.95 68.58 270)
+		(at 233.68 59.69 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7483,7 +7158,7 @@
 		(fields_autoplaced yes)
 		(uuid "9414f39b-4a89-4c15-9ed1-aa3a0eb002f0")
 		(property "Reference" "SW4"
-			(at 238.76 67.3099 90)
+			(at 237.49 58.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7494,7 +7169,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 238.76 69.8499 90)
+			(at 237.49 60.9599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7504,8 +7179,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 240.03 68.58 0)
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+			(at 238.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7516,7 +7191,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 240.03 68.58 0)
+			(at 238.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7527,7 +7202,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 234.95 68.58 0)
+			(at 233.68 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7544,7 +7219,7 @@
 			(uuid "abc3b9e0-8ec9-4e2b-9a7c-e6aee61414fa")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "SW4")
 					(unit 1)
@@ -7554,7 +7229,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 250.19 68.58 270)
+		(at 248.92 59.69 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7565,7 +7240,7 @@
 		(fields_autoplaced yes)
 		(uuid "942cece3-5f7a-44ff-889c-26d4e5444fae")
 		(property "Reference" "SW5"
-			(at 254 67.3099 90)
+			(at 252.73 58.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7576,7 +7251,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 254 69.8499 90)
+			(at 252.73 60.9599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7586,8 +7261,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 255.27 68.58 0)
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+			(at 254 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7598,7 +7273,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 255.27 68.58 0)
+			(at 254 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7609,7 +7284,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 250.19 68.58 0)
+			(at 248.92 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7626,7 +7301,7 @@
 			(uuid "f8bd5696-69df-4788-b037-b93f1d6cba45")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "SW5")
 					(unit 1)
@@ -7668,7 +7343,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 137.16 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -7719,7 +7394,7 @@
 			(uuid "132ca6b4-cefe-4e10-8d13-02e8d861cde5")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D19")
 					(unit 1)
@@ -7801,7 +7476,7 @@
 			(uuid "ec4e1b48-a95b-4c9f-8031-30182c0ecc46")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R9")
 					(unit 1)
@@ -7883,7 +7558,7 @@
 			(uuid "306b6082-7c4e-431e-8abb-ce8a834b6094")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R19")
 					(unit 1)
@@ -7893,7 +7568,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 219.71 68.58 270)
+		(at 218.44 59.69 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7904,7 +7579,7 @@
 		(fields_autoplaced yes)
 		(uuid "9becfade-180c-48e6-9766-cd42cf89f31a")
 		(property "Reference" "SW3"
-			(at 223.52 67.3099 90)
+			(at 222.25 58.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7915,7 +7590,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 223.52 69.8499 90)
+			(at 222.25 60.9599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7925,8 +7600,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 224.79 68.58 0)
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+			(at 223.52 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7937,7 +7612,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 68.58 0)
+			(at 223.52 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7948,7 +7623,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 219.71 68.58 0)
+			(at 218.44 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7965,7 +7640,7 @@
 			(uuid "a85c1358-da8d-481a-8b8b-f2b96e56ade1")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "SW3")
 					(unit 1)
@@ -8047,7 +7722,7 @@
 			(uuid "9f9ed617-7dcd-4bc3-8aaf-0a7cb1f3773b")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R20")
 					(unit 1)
@@ -8129,7 +7804,7 @@
 			(uuid "0ec53528-9c3d-419e-b64a-b53bf6c7855c")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R15")
 					(unit 1)
@@ -8171,7 +7846,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 124.46 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8222,7 +7897,7 @@
 			(uuid "a0882c25-7b4b-4e9c-b36e-a84171fbd584")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D8")
 					(unit 1)
@@ -8301,7 +7976,7 @@
 			(uuid "01a32058-3315-469a-833e-c97d61a65179")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR011")
 					(unit 1)
@@ -8380,91 +8055,9 @@
 			(uuid "fc0e59a2-844a-49f8-9122-2abd826fff46")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 250.19 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a3354a1d-423a-4f35-b8c1-0bd5077dff79")
-		(property "Reference" "R26"
-			(at 252.73 80.0099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 252.73 82.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 248.412 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 250.19 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 250.19 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "1de1d405-1808-4b22-975a-74367ee6a218")
-		)
-		(pin "1"
-			(uuid "905db4ba-7e95-49ed-8d33-38c41172443f")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -8504,7 +8097,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 149.86 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -8555,7 +8148,7 @@
 			(uuid "094372b9-e7ba-463f-9310-0171d18bdbca")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D5")
 					(unit 1)
@@ -8637,7 +8230,7 @@
 			(uuid "762c8d47-a7f5-4bfe-b2a8-4c145b3bd250")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R11")
 					(unit 1)
@@ -8679,7 +8272,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 109.22 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -8730,7 +8323,7 @@
 			(uuid "d894508f-914c-4464-b793-237d30e59946")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D2")
 					(unit 1)
@@ -8836,7 +8429,7 @@
 			(uuid "06121abd-3297-4829-8b3a-41ee33b3d3cd")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "J2")
 					(unit 1)
@@ -9032,7 +8625,7 @@
 			(uuid "712eee76-6ea1-484e-ba21-867c624fba24")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "A1")
 					(unit 1)
@@ -9074,7 +8667,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 109.22 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9125,7 +8718,7 @@
 			(uuid "f1481307-d347-42d6-a091-28a82d5c1709")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D7")
 					(unit 1)
@@ -9167,7 +8760,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 93.98 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9218,7 +8811,7 @@
 			(uuid "25a8dc4d-2386-496a-84ab-153f1fc66120")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D6")
 					(unit 1)
@@ -9297,7 +8890,7 @@
 			(uuid "567731c3-ce5c-4ff3-bf5a-d0f1293d841d")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR010")
 					(unit 1)
@@ -9379,7 +8972,7 @@
 			(uuid "daded5d1-de18-4441-b501-e7b8ca64dfe8")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R2")
 					(unit 1)
@@ -9421,7 +9014,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 124.46 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -9472,7 +9065,7 @@
 			(uuid "11394297-bf33-472d-9f0e-57ed9326613e")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D18")
 					(unit 1)
@@ -9551,7 +9144,7 @@
 			(uuid "b59230e5-61d2-419a-aa74-1f51f233ee3d")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR08")
 					(unit 1)
@@ -9630,7 +9223,7 @@
 			(uuid "585641f0-0b7f-4296-bac4-37cd356dfc34")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR014")
 					(unit 1)
@@ -9709,7 +9302,7 @@
 			(uuid "5a39b572-1540-4d5d-863c-9f9af33ff7c6")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR015")
 					(unit 1)
@@ -9788,9 +9381,91 @@
 			(uuid "f626f5e3-59ea-4e9a-8fc7-85b3a0928fd8")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 270.51 25.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c6bd53bd-b649-4b35-89f7-fd8322d5b0fc")
+		(property "Reference" "J3"
+			(at 273.05 25.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Battery"
+			(at 273.05 27.9399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 270.51 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 270.51 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 270.51 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7c31e5c7-dc22-4634-9904-ac4e3880892b")
+		)
+		(pin "1"
+			(uuid "cfc18da8-1da1-42b9-b9cc-4d20367365a0")
+		)
+		(instances
+			(project "piHardware_routed"
+				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -9870,7 +9545,7 @@
 			(uuid "5a86c46a-e5a3-4215-856a-91fd14b65923")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R4")
 					(unit 1)
@@ -9880,7 +9555,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 189.23 86.36 0)
+		(at 255.27 27.94 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9889,9 +9564,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d0a1319e-73ba-4bf0-8d75-bc2d0832cc59")
-		(property "Reference" "#PWR06"
-			(at 189.23 92.71 0)
+		(uuid "cf447edf-2e02-46f3-b482-85bbe644d056")
+		(property "Reference" "#PWR023"
+			(at 255.27 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9902,7 +9577,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 189.23 91.44 0)
+			(at 255.27 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9912,7 +9587,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 86.36 0)
+			(at 255.27 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9923,7 +9598,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 86.36 0)
+			(at 255.27 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9934,7 +9609,85 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 189.23 86.36 0)
+			(at 255.27 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "89da5dca-ef76-4cbd-8b58-5728b9551ab1")
+		)
+		(instances
+			(project "piHardware_routed"
+				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 187.96 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0a1319e-73ba-4bf0-8d75-bc2d0832cc59")
+		(property "Reference" "#PWR06"
+			(at 187.96 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 187.96 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 187.96 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9948,7 +9701,7 @@
 			(uuid "044f1002-3548-464c-a076-45c703d5babe")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR06")
 					(unit 1)
@@ -10030,7 +9783,7 @@
 			(uuid "133769e3-6aca-4127-8e17-82da2e7b1207")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R10")
 					(unit 1)
@@ -10040,7 +9793,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 204.47 68.58 270)
+		(at 203.2 59.69 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10051,7 +9804,7 @@
 		(fields_autoplaced yes)
 		(uuid "da647864-119a-4dca-8491-22a4728855c5")
 		(property "Reference" "SW2"
-			(at 208.28 67.3099 90)
+			(at 207.01 58.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10062,7 +9815,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 208.28 69.8499 90)
+			(at 207.01 60.9599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10072,8 +9825,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 209.55 68.58 0)
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+			(at 208.28 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10084,7 +9837,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 68.58 0)
+			(at 208.28 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10095,7 +9848,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 204.47 68.58 0)
+			(at 203.2 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10112,7 +9865,7 @@
 			(uuid "cd0b4f68-e0cb-4838-bcde-3909143a5006")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "SW2")
 					(unit 1)
@@ -10191,7 +9944,7 @@
 			(uuid "a83ec7dc-f206-49f0-a988-b6ce2be33d70")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR03")
 					(unit 1)
@@ -10201,7 +9954,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 189.23 68.58 270)
+		(at 187.96 59.69 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10212,7 +9965,7 @@
 		(fields_autoplaced yes)
 		(uuid "dcec425f-59bb-4fdb-b5a5-b57700882551")
 		(property "Reference" "SW1"
-			(at 193.04 67.3099 90)
+			(at 191.77 58.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10223,7 +9976,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 193.04 69.8499 90)
+			(at 191.77 60.9599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10233,8 +9986,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 194.31 68.58 0)
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+			(at 193.04 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10245,7 +9998,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 68.58 0)
+			(at 193.04 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10256,7 +10009,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 189.23 68.58 0)
+			(at 187.96 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10273,7 +10026,7 @@
 			(uuid "8edd19de-bf3d-4377-998d-dd6c83633d4f")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "SW1")
 					(unit 1)
@@ -10282,8 +10035,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 234.95 62.23 0)
+		(lib_id "power:PWR_FLAG")
+		(at 264.16 25.4 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10292,9 +10045,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "e13d1638-8655-41e2-99e7-4beb55cd5a3e")
-		(property "Reference" "#PWR019"
-			(at 234.95 66.04 0)
+		(uuid "e37fcc82-616b-4b94-87ec-e82d1a5c5722")
+		(property "Reference" "#FLG01"
+			(at 264.16 23.495 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10304,8 +10057,8 @@
 				)
 			)
 		)
-		(property "Value" "+3V3"
-			(at 234.95 57.15 0)
+		(property "Value" "PWR_FLAG"
+			(at 264.16 20.32 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10315,7 +10068,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 234.95 62.23 0)
+			(at 264.16 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10326,7 +10079,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 234.95 62.23 0)
+			(at 264.16 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10336,8 +10089,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 234.95 62.23 0)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 264.16 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10348,12 +10101,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "4bfc3b44-e8bb-4753-9c6d-27090bccdce4")
+			(uuid "9906abf1-713b-4c41-82ae-603155b71cde")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "#PWR019")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -10393,7 +10146,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 137.16 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -10444,91 +10197,9 @@
 			(uuid "fb043622-96b5-4573-ba03-c109771575d0")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 234.95 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e5e6ce15-5f92-4f7d-872f-beb59b4a3b81")
-		(property "Reference" "R25"
-			(at 237.49 80.0099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 237.49 82.5499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 233.172 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 234.95 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 234.95 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "c78d2ba4-9ae0-4d9c-ac54-973c9fe27c22")
-		)
-		(pin "1"
-			(uuid "9cf58388-2ceb-45af-b556-e568f3348470")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -10608,7 +10279,7 @@
 			(uuid "683d7ae3-cba0-4740-aba4-5a8acdc77da0")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R8")
 					(unit 1)
@@ -10650,7 +10321,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 137.16 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -10701,7 +10372,7 @@
 			(uuid "0649229c-5705-4f08-8d73-14dd1ccc6df4")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D9")
 					(unit 1)
@@ -10743,7 +10414,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm"
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 149.86 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -10794,87 +10465,9 @@
 			(uuid "5df15397-3d7f-4ee6-9fa9-1893c573f654")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "D10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 189.23 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f1a8ce79-1ba3-4824-ac84-3a8aeb17b1c2")
-		(property "Reference" "#PWR05"
-			(at 189.23 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 189.23 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 189.23 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 189.23 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 189.23 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "45048e13-1e04-4f8b-b815-a7b55d9851d0")
-		)
-		(instances
-			(project "piHardware"
-				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
-					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -10954,7 +10547,7 @@
 			(uuid "e9ee70cc-b227-4f29-880f-2cbacddf00d1")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R13")
 					(unit 1)
@@ -11036,7 +10629,7 @@
 			(uuid "f555aabe-c209-4433-ad49-419013edd61d")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R6")
 					(unit 1)
@@ -11046,7 +10639,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 234.95 86.36 0)
+		(at 233.68 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11057,7 +10650,7 @@
 		(fields_autoplaced yes)
 		(uuid "f9a69e85-ae86-4e3f-aa4a-797dead59a74")
 		(property "Reference" "#PWR020"
-			(at 234.95 92.71 0)
+			(at 233.68 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11068,7 +10661,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 234.95 91.44 0)
+			(at 233.68 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11078,7 +10671,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 234.95 86.36 0)
+			(at 233.68 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11089,7 +10682,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 234.95 86.36 0)
+			(at 233.68 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11100,7 +10693,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 234.95 86.36 0)
+			(at 233.68 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11114,7 +10707,7 @@
 			(uuid "65d85623-2aa1-4410-b613-393bb25e94b6")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR020")
 					(unit 1)
@@ -11192,7 +10785,7 @@
 			(uuid "31434010-8e4f-4de4-8d83-49023395b345")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "#PWR01")
 					(unit 1)
@@ -11274,7 +10867,7 @@
 			(uuid "d0b28d60-2fcc-4d81-b0ec-449c917b00da")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "R17")
 					(unit 1)
@@ -11373,7 +10966,7 @@
 			(uuid "da4fef80-882a-410c-a88d-334a42379b86")
 		)
 		(instances
-			(project "piHardware"
+			(project "piHardware_routed"
 				(path "/c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
 					(reference "J1")
 					(unit 1)

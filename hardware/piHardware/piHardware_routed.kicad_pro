@@ -488,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "piHardware.kicad_pro",
+    "filename": "piHardware_routed.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -682,18 +682,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "piHardware.kicad_sch",
-        "name": "ルート",
+        "filename": "piHardware_routed.kicad_sch",
+        "name": "piHardware_routed",
         "uuid": "c3fc6e3f-150c-4e91-b750-21ca7e978f7f"
       }
     ],
-    "used_designators": "A1,J1-3,R1-26,#PWR1-22,D1-25,U1,SW1-5",
+    "used_designators": "A1,#FLG1,J1-4,R1-26,#PWR1-22,D1-25,U1,SW1-5",
     "variants": []
   },
   "sheets": [
     [
       "c3fc6e3f-150c-4e91-b750-21ca7e978f7f",
-      "ルート"
+      "piHardware_routed"
     ]
   ],
   "text_variables": {},
