@@ -7,22 +7,22 @@ bool led_mode[pins::kRowNum][pins::kColNum] = {};
 void led_setup()
 {
     int i;
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < kRowNum; i++)
     {
         pinMode(pins::kLedCols[i], OUTPUT);
     }
 
-    for (i = 5; i < 10; i++)
+    for (i = 0; i < kColNum; i++)
     {
         pinMode(pins::kLedRows[i], OUTPUT);
     }
 
-    for (i = 9; i > 4; i--)
+    for (i = 0; i > kRowNum; i++)
     {
         digitalwrite(pins::kLedRows[i], HIGH);
     }
 
-    for (i = 4; i > 0; i--)
+    for (i = 0; i > kColNum; i++)
     {
         digitalwrite(pins::kLedRows[i], LOW);
     }
