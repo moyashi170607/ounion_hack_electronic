@@ -6,29 +6,26 @@ bool led_mode[pins::kRowNum][pins::kColNum] = {};
 
 void led_setup()
 {
-    pinMode(pins::kLedRows[5], OUTPUT);
-    pinMode(pins::kLedRows[6], OUTPUT);
-    pinMode(pins::kLedRows[7], OUTPUT);
-    pinMode(pins::kLedRows[8], OUTPUT);
-    pinMode(pins::kLedRows[9], output);
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        pinMode(pins::kLedCols[i], OUTPUT);
+    }
 
-    pinMode(pins::kLedCols[0], OUTPUT);
-    pinMode(pins::kLedCols[1], OUTPUT);
-    pinMode(pins::kLedCols[2], OUTPUT);
-    pinMode(pins::kLedCols[3], OUTPUT);
-    pinMode(pins::kLedCols[4], OUTPUT);
+    for (i = 5; i < 10; i++)
+    {
+        pinMode(pins::kLedRows[i], OUTPUT);
+    }
 
-    digitalwrite(pins::kLedRows[5], HIGH);
-    digitalwrite(pins::kLedRows[6], HIGH);
-    digitalwrite(pins::kLedRows[7], HIGH);
-    digitalwrite(pins::kLedRows[8], HIGH);
-    digitalwrite(pins::kLedRows[9], HIGH);
+    for (i = 9; i > 4; i--)
+    {
+        digitalwrite(pins::kLedRows[i], HIGH);
+    }
 
-    digitalwrite(pins::kLedCols[0], LOW);
-    digitalwrite(pins::kLedCols[1], LOW);
-    digitalwrite(pins::kLedCols[2], LOW);
-    digitalwrite(pins::kLedCols[3], LOW);
-    digitalwrite(pins::kLedCols[4], LOW);
+    for (i = 4; i > 0; i--)
+    {
+        digitalwrite(pins::kLedRows[i], LOW);
+    }
 }
 
 void scan_led() {}
