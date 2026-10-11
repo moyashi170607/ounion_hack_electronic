@@ -6,7 +6,6 @@
 #include "wav.hpp"
 
 Track tracks[kTracks];
-volatile bool pattern[kTracks][kSteps];
 volatile uint16_t bpm = 120;
 
 namespace {
@@ -82,7 +81,7 @@ void audio_loop() {
         phase -= kSampleRate * 60;
         step = (step + 1) % kSteps;
         for (size_t t = 0; t < kTracks; t++)
-            if (pattern[t][step]) tracks[t].pos = 0;  // 頭から鳴らし直す
+            if (is_step_on(t, step)) tracks[t].pos = 0;  // 頭から鳴らし直す
     }
 
     int32_t mixL = 0;
