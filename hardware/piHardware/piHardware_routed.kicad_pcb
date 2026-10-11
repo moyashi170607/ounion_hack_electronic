@@ -3697,15 +3697,6 @@
 		(path "/b27201aa-aec1-4cec-bf6e-f228122d7cec")
 		(sheetname "/")
 		(sheetfile "piHardware_routed.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "30" "37" "1" "2" "4" "5" "6" "7" "9" "10" "11" "12" "14" "15"
-					"16" "17" "19" "20" "39" "40" "3" "23" "28" "18" "13" "38" "8" "36"
-					"21" "22" "24" "25" "26" "27" "29" "35" "31" "32" "34" "33"
-				)
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7199,7 +7190,7 @@
 		)
 		(zone
 			(layers "F.Cu" "F.Paste")
-			(uuid "208916fe-c9aa-4177-8c24-9bafa3f75a21")
+			(uuid "1c06d690-00df-423b-adcd-1a4c79cb7b4d")
 			(name "Pad Keep Out D1")
 			(hatch full 0.5)
 			(connect_pads
@@ -7239,7 +7230,7 @@
 		)
 		(zone
 			(layers "F.Cu" "F.Paste")
-			(uuid "1c06d690-00df-423b-adcd-1a4c79cb7b4d")
+			(uuid "208916fe-c9aa-4177-8c24-9bafa3f75a21")
 			(name "Pad Keep Out D3")
 			(hatch full 0.5)
 			(connect_pads
