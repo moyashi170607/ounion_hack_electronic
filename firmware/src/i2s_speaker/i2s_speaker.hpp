@@ -25,6 +25,9 @@ extern Track tracks[kTracks];
 /// @brief テンポ [BPM]。1ステップは16分音符
 extern volatile uint16_t bpm;
 
+/// @brief 今鳴らしているステップ（0 〜 kSteps-1）を返す
+uint8_t current_step();
+
 /// @brief WAVファイルをRAMに読み込んで tracks[t] に割り当てる関数
 /// @note audio_setup() より前に呼ぶ
 bool load_track(size_t t, const char* path);

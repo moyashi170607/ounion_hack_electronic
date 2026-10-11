@@ -12,9 +12,14 @@ namespace {
 
 I2S i2s(OUTPUT);
 
+/// @brief 今鳴らしているステップ
+/// @note コア1が書き、コア0が読む
+volatile uint8_t step = kSteps - 1;
+
 /// @brief I2S へは kSampleRate の何倍で出すか
-/// @note PCM5102A は 22.05kHz を正式にサポートしておらず無音になることがあるので、
-///       各サンプルを2回ずつ送って 44.1kHz で出す
+/// @note PCM5102A は 22.05kHzを
+/// 正式にサポートしておらず無音になることがあるので、
+/// 各サンプルを2回ずつ送って 44.1kHz で出す
 constexpr uint32_t kOversample = 2;
 
 /// @brief pos フレーム目を16bitの L/R にそろえて取り出す
@@ -25,6 +30,8 @@ void read_frame(const Track& tr, uint32_t pos, int32_t& l, int32_t& r) {
 }
 
 }  // namespace
+
+uint8_t current_step() { return step; }
 
 bool load_track(size_t t, const char* path) {
     if (t >= kTracks) return false;
@@ -75,7 +82,6 @@ void audio_loop() {
     // 1ステップ = kSampleRate*60/(bpm*4) サンプル。
     // 割り切れない端数も持ち越すのでテンポがずれない
     static uint32_t phase = kSampleRate * 60;
-    static uint32_t step = kSteps - 1;
     phase += bpm * 4;
     if (phase >= kSampleRate * 60) {
         phase -= kSampleRate * 60;

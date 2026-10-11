@@ -1,5 +1,7 @@
 #include "sequence_manager.hpp"
 
+#include "i2s_speaker/i2s_speaker.hpp"
+
 namespace {
 
 /// @brief 各ステップで鳴らすかどうか（true で頭から再生）
@@ -18,4 +20,29 @@ bool is_step_on(uint8_t track, uint8_t step) {
     return pattern[track][step];
 }
 
-void pressed_switch(Button button) {}
+void pressed_switch(Button button) {
+    switch (button) {
+        case Button::SOUND0:
+            toggle_step(0, current_step());
+            break;
+
+        case Button::SOUND1:
+            toggle_step(1, current_step());
+            break;
+
+        case Button::SOUND2:
+            toggle_step(2, current_step());
+            break;
+
+        case Button::SOUND3:
+            toggle_step(3, current_step());
+            break;
+
+        case Button::SOUND4:
+            toggle_step(4, current_step());
+            break;
+
+        default:
+            break;
+    }
+}
