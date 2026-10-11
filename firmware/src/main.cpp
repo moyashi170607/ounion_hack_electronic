@@ -13,6 +13,31 @@
 #include "sequence_manager/sequence_manager.hpp"
 #include "pins.hpp"
 
+namespace {
+
+// 入力がこの時間だけ変化しなければ、状態を確定する
+constexpr unsigned long kDebounceMs = 30;
+
+struct ButtonInput {
+    pin_size_t pin;
+    Button button;
+
+    int lastRawState = HIGH;       // 前回読み取った生の入力
+    int stableState = HIGH;        // チャタリング除去後の状態
+    unsigned long changedAt = 0;  // 生の入力が最後に変わった時刻
+};
+
+ButtonInput buttons[] = {
+    {pins::kSwt1, Button::SOUND0},
+    {pins::kSwt2, Button::SOUND1},
+    {pins::kSwt3, Button::SOUND2},
+    {pins::kSwt4, Button::SOUND3},
+    {pins::kSwt5, Button::SOUND4},
+};
+
+}  // namespace
+
+
 void setup_buttons() {
     for (ButtonInput& input : buttons) {
         pinMode(input.pin, INPUT_PULLUP);
