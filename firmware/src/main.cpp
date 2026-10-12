@@ -3,15 +3,8 @@
 #include "display/display.hpp"
 #include "i2s_speaker/i2s_speaker.hpp"
 #include "led_matrix/led_matrix.hpp"
-#include "sequence_manager/sequence_manager.hpp"
-
-#include <Arduino.h>
-
-#include "display/display.hpp"
-#include "i2s_speaker/i2s_speaker.hpp"
-#include "led_matrix/led_matrix.hpp"
-#include "sequence_manager/sequence_manager.hpp"
 #include "pins.hpp"
+#include "sequence_manager/sequence_manager.hpp"
 
 namespace {
 
@@ -22,21 +15,18 @@ struct ButtonInput {
     pin_size_t pin;
     Button button;
 
-    int lastRawState = HIGH;       // 前回読み取った生の入力
-    int stableState = HIGH;        // チャタリング除去後の状態
+    int lastRawState = HIGH;      // 前回読み取った生の入力
+    int stableState = HIGH;       // チャタリング除去後の状態
     unsigned long changedAt = 0;  // 生の入力が最後に変わった時刻
 };
 
 ButtonInput buttons[] = {
-    {pins::kSwt1, Button::SOUND0},
-    {pins::kSwt2, Button::SOUND1},
-    {pins::kSwt3, Button::SOUND2},
-    {pins::kSwt4, Button::SOUND3},
+    {pins::kSwt1, Button::SOUND0}, {pins::kSwt2, Button::SOUND1},
+    {pins::kSwt3, Button::SOUND2}, {pins::kSwt4, Button::SOUND3},
     {pins::kSwt5, Button::SOUND4},
 };
 
 }  // namespace
-
 
 void setup_buttons() {
     for (ButtonInput& input : buttons) {
@@ -83,11 +73,7 @@ void setup() {
     tft.setCursor(0, 0);
 
     Serial.begin(115200);
-    setup_buttons();  // ボタンの初期化
+    setup_buttons();
 }
 
-void loop() {
-    poll_buttons();  // 毎回ボタンを確認
-
-    // 今後、ほかの処理もここに追加できる
-}
+void loop() { poll_buttons(); }
