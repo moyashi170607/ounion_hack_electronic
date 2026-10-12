@@ -8,15 +8,15 @@
 /// @brief LEDのピンを全てOUTPUTモードにしてLEDが消えている状態にする
 void led_setup();
 
-/// @brief
-/// 前のステップのLEDを消し、今のステップを表すLEDを点灯するように設定する
-/// @param step 光らせるステップ
-void set_step_led(uint8_t step);
+/// @brief ステップ番号に対応するLEDの位置を返す
+/// @param step ステップ番号（0 〜 kSteps-1）
+/// @return LEDの位置。範囲外なら kNoLedPos
+pins::LedPos step_led_pos(uint8_t step);
 
-/// @brief ボタンのそばにあるLEDを制御する関数
-/// @param track どのトラックに対応したLEDか
-/// @param on trueなら点灯、falseなら消灯
-void set_sound_led(uint8_t track, bool on);
+/// @brief トラック番号に対応するLEDの位置を返す
+/// @param track トラック番号（0 〜 kTracks-1）
+/// @return LEDの位置。範囲外なら kNoLedPos
+pins::LedPos sound_led_pos(uint8_t track);
 
 /// @brief LEDを点灯消灯させる
 /// @note set_xxx_ledはあくまでもどこを点灯させるかの設定をするのみで、

@@ -25,4 +25,8 @@ void led_setup() {
     }
 }
 
+pins::LedPos step_led_pos(uint8_t step) {}
+
+pins::LedPos sound_led_pos(uint8_t track) {}
+
 void scan_led() {}
