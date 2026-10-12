@@ -77,6 +77,7 @@ bool load_track(size_t t, const char* path) {
 void trigger_track(uint8_t t) {
     // トラック数の上限を超えた数字が来たら弾く
     if (t > kTracks) return;
+    // 鳴らす予約を追加
     trigger_reqest[kTracks] = trigger_reqest[kTracks] + 1;
 }
 
