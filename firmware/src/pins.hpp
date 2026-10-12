@@ -15,9 +15,9 @@ namespace pins {
 inline constexpr auto& kTftSpi = SPI1;
 constexpr pin_size_t kTftSck = 10;   // SCK
 constexpr pin_size_t kTftMosi = 11;  // SDA
-constexpr pin_size_t kTftCs = 13;    // CS
+constexpr pin_size_t kTftCs = 15;    // CS
 constexpr pin_size_t kTftDc = 12;    // A0
-constexpr pin_size_t kTftRst = 15;   // RESET
+constexpr pin_size_t kTftRst = 13;   // RESET
 
 // I2S DAC
 constexpr pin_size_t kDacBck = 20;  // BCK
