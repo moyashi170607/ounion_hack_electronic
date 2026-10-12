@@ -19,12 +19,12 @@ void led_setup()
 
     for (i = 0; i < pins::kRowNum; i++)
     {
-        digitalwrite(pins::kLedRows[i], HIGH);
+        digitalWrite(pins::kLedRows[i], HIGH);
     }
 
     for (i = 0; i < pins::kColNum; i++)
     {
-        digitalwrite(pins::kLedRows[i], LOW);
+        digitalWrite(pins::kLedRows[i], LOW);
     }
 }
 
