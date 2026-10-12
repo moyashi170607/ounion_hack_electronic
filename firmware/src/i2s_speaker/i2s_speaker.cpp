@@ -80,7 +80,7 @@ void trigger_track(uint8_t t) {
     // トラック数の上限を超えた数字が来たら弾く
     if (t > kTracks) return;
     // 鳴らす予約を追加
-    trigger_request[kTracks] = trigger_request[kTracks] + 1;
+    trigger_request[t] = true;
 }
 
 void audio_setup() {
