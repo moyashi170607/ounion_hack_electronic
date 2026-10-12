@@ -92,11 +92,6 @@ void audio_setup() {
 }
 
 void audio_loop() {
-    // 1ステップ = kSampleRate*60/(bpm*4) サンプル。
-    // 割り切れない端数も持ち越すのでテンポがずれない
-    static uint32_t phase = kSampleRate * 60;
-    phase += bpm * 4;
-
     // 各トラックを確認して、trigger_requestがtrueなら音声を再生する
     for (size_t t = 0; t < kTracks; t++) {
         if (trigger_request[t]) {
@@ -106,6 +101,11 @@ void audio_loop() {
             tracks[t].pos = 0;
         }
     }
+
+    // 1ステップ = kSampleRate*60/(bpm*4) サンプル。
+    // 割り切れない端数も持ち越すのでテンポがずれない
+    static uint32_t phase = kSampleRate * 60;
+    phase += bpm * 4;
 
     if (phase >= kSampleRate * 60) {
         phase -= kSampleRate * 60;
