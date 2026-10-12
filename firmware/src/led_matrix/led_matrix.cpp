@@ -21,7 +21,7 @@ void led_setup() {
     }
 
     for (i = 0; i < pins::kColNum; i++) {
-        digitalWrite(pins::kLedRows[i], LOW);
+        digitalWrite(pins::kLedCols[i], LOW);
     }
 }
 
