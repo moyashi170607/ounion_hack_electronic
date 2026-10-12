@@ -2,15 +2,17 @@
 
 #include "display/display.hpp"
 #include "i2s_speaker/i2s_speaker.hpp"
+#include "input/button.hpp"
 #include "led_matrix/led_matrix.hpp"
+#include "pins.hpp"
 #include "sequence_manager/sequence_manager.hpp"
 
 void setup() {
-    // LCD周りの初期化
     setup_display();
     tft.setCursor(0, 0);
+
+    Serial.begin(115200);
+    setup_buttons();
 }
 
-void loop() {
-    // put your main code here, to run repeatedly:
-}
+void loop() { poll_buttons(); }
