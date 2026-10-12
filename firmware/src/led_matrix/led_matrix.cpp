@@ -25,4 +25,8 @@ void led_setup() {
     }
 }
 
+void clear_led_mode() {}
+
+void update_step_led() {}
+
 void scan_led() {}
