@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 
+#include "pins.hpp"
 #include "sequence_manager/sequence_manager.hpp"
 
 /// @brief LEDのピンを全てOUTPUTモードにしてLEDが消えている状態にする
