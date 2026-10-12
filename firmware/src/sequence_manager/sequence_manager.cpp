@@ -13,6 +13,9 @@ volatile bool pattern[kTracks][kSteps];
 void toggle_step(uint8_t track, uint8_t step) {
     if (track >= kTracks || step >= kSteps) return;
     pattern[track][step] = !pattern[track][step];
+
+    // ボタンが押されたときにこの関数が呼ばれるので、ここで即時再生の処理も入れておく
+    trigger_track(track);
 }
 
 bool is_step_on(uint8_t track, uint8_t step) {
