@@ -22,6 +22,10 @@ volatile uint8_t step = kSteps - 1;
 /// 各サンプルを2回ずつ送って 44.1kHz で出す
 constexpr uint32_t kOversample = 2;
 
+/// @brief
+/// ボタンが押されたときに即座に音を鳴らす処理が予約される。その予約が各トラックごとに何回分溜まっているか。
+volatile uint8_t trigger_reqest[kTracks];
+
 /// @brief pos フレーム目を16bitの L/R にそろえて取り出す
 void read_frame(const Track& tr, uint32_t pos, int32_t& l, int32_t& r) {
     const int16_t* p = tr.data + pos * tr.channels;
@@ -70,6 +74,12 @@ bool load_track(size_t t, const char* path) {
     return true;
 }
 
+void trigger_track(uint8_t t) {
+    // トラック数の上限を超えた数字が来たら弾く
+    if (t > kTracks) return;
+    trigger_reqest[kTracks] = trigger_reqest[kTracks] + 1;
+}
+
 void audio_setup() {
     i2s.setBCLK(pins::kDacBck);  // LRCLK は BCLK+1
     i2s.setDATA(pins::kDacDin);
@@ -83,6 +93,7 @@ void audio_loop() {
     // 割り切れない端数も持ち越すのでテンポがずれない
     static uint32_t phase = kSampleRate * 60;
     phase += bpm * 4;
+
     if (phase >= kSampleRate * 60) {
         phase -= kSampleRate * 60;
         step = (step + 1) % kSteps;
