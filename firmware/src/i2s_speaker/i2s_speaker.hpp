@@ -22,12 +22,11 @@ constexpr uint32_t kSampleRate = 22050;
 /// @note pos は loop1（コア1）が進める
 extern Track tracks[kTracks];
 
-/// @brief 各ステップで鳴らすかどうか（true で頭から再生）
-/// @note コア0が書き、コア1が読む
-extern volatile bool pattern[kTracks][kSteps];
-
 /// @brief テンポ [BPM]。1ステップは16分音符
 extern volatile uint16_t bpm;
+
+/// @brief 今鳴らしているステップ（0 〜 kSteps-1）を返す
+uint8_t current_step();
 
 /// @brief WAVファイルをRAMに読み込んで tracks[t] に割り当てる関数
 /// @note audio_setup() より前に呼ぶ
