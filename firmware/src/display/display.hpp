@@ -13,6 +13,9 @@ extern Adafruit_ST7735 tft;
 /// @param mosi TFTするGPIO
 void setup_display();
 void display_print();
-void display_squares();
+
+void getBlockPos(int step, int instrument, int &x, int &y);
+void drawBlock(int step, int instrument, uint16_t color);
+void drawAllBlocks();
 
 #endif  // DISPLAY_HPP

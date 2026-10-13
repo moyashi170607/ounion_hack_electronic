@@ -27,17 +27,51 @@ void display_print() {
     // 文字
     tft.setCursor(60, 80);
     tft.setTextColor(ST77XX_WHITE);
-    tft.setTextSize(2);
+    tft.setTextSize(1);
     tft.print("Hello");
 }
 
-void display_squares() {
-    for (int y = 0; y < 5; y++) {
-        for (int x = 0; x < 16; x++) {
-            int px = x * 10;
-            int py = y * 20;
 
-            tft.drawRect(px, py, 8, 18, ST77XX_WHITE);
+struct Position {
+    int x;
+    int y;
+};
+
+Position getBlockPos(int step, int instrument) {
+    constexpr int X_o = 2 + 62;
+    constexpr int Y_o = 2;
+    constexpr int ROW_LENGTH = 8;
+    constexpr int INTERVAL_X = 12;
+    constexpr int INTERVAL_Y = 12;
+    constexpr int INST_SPACE_Y = INTERVAL_Y * 2 + 2;
+
+    int col = step % ROW_LENGTH;     // 0〜7
+    int subRow = step / ROW_LENGTH;  // 0 or 1
+
+    int x = X_o + col * INTERVAL_X;
+    int y = Y_o + subRow * INTERVAL_Y + instrument * INST_SPACE_Y;
+
+    return {x, y};
+}
+
+
+void drawBlock(int step, int instrument, uint16_t color) {
+    Position p = getBlockPos(step, instrument);
+    constexpr int BLOCK_W = 10;
+    constexpr int BLOCK_H = 10;
+
+    tft.fillRect(p.x, p.y, BLOCK_W, BLOCK_H, color);
+    tft.drawRect(p.x, p.y, BLOCK_W, BLOCK_H, ST77XX_WHITE);
+}
+
+void drawAllBlocks() {
+    constexpr int NUM_INSTRUMENTS = 5;
+    constexpr int NUM_STEPS = 16;
+
+    for (int i = 0; i < NUM_INSTRUMENTS; i++) {
+        for (int j = 0; j < NUM_STEPS; j++) {
+            drawBlock(j, i, ST77XX_BLACK);
         }
     }
 }
+
