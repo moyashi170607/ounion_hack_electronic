@@ -6,9 +6,11 @@
 void setup() {
     // LCD周りの初期化
     setup_display();
-    tft.setCursor(0, 0);
+    // tft.setCursor(0, 0);
+    display_print();
 }
 
 void loop() {
     // put your main code here, to run repeatedly:
+    
 }
