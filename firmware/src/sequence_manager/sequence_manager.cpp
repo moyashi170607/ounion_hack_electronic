@@ -15,7 +15,10 @@ void toggle_step(uint8_t track, uint8_t step) {
     pattern[track][step] = !pattern[track][step];
 
     // ボタンが押されたときにこの関数が呼ばれるので、ここで即時再生の処理も入れておく
-    trigger_track(track);
+    // もし変更後がtrue(音がなる状態)だったなら即座に音を鳴らす処理の予約を入れる
+    if (pattern[track][step]) {
+        trigger_track(track);
+    }
 }
 
 bool is_step_on(uint8_t track, uint8_t step) {
