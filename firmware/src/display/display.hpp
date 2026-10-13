@@ -14,7 +14,6 @@ extern Adafruit_ST7735 tft;
 void setup_display();
 void display_print();
 
-void getBlockPos(int step, int instrument, int &x, int &y);
 void drawBlock(int step, int instrument, uint16_t color);
 void drawAllBlocks();
 
