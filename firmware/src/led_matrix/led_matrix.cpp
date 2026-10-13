@@ -33,9 +33,9 @@ void led_setup()
 void clear_led_mode()
 {
     int i, j;
-    for (i = 0; i < pins::kRowNum; j++)
+    for (i = 0; i < pins::kRowNum; i++)
     {
-        for (j = 0; j < pins::kColNum; i++)
+        for (j = 0; j < pins::kColNum; j++)
         {
             led_mode[i][j] = false;
         }
