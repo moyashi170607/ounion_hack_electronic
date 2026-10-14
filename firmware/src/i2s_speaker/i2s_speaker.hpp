@@ -39,4 +39,8 @@ void audio_setup();
 /// @note バッファが空くまでブロックするので、loop1（コア1）から毎回呼ぶ
 void audio_loop();
 
+/// @brief 即座に対応した音声を流す
+/// @param t trackの番号
+void trigger_track(uint8_t t);
+
 #endif  // I2S_SPEAKER_HPP
