@@ -16,8 +16,11 @@ void clear_led_mode();
 /// @brief stepに関するLEDのled_modeを変更する
 void update_step_led();
 
+/// @brief trackに関するLEDのled_modeを変更する
+void update_track_led();
+
 /// @brief LEDを点灯消灯させる
-/// @note set_xxx_ledはあくまでもどこを点灯させるかの設定をするのみで、
+/// @note update_xxx_ledはあくまでもどこを点灯させるかの設定をするのみで、
 /// 実際にピンのHIGH LOWを切り替えるのはこの関数
 void scan_led();
 
