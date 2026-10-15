@@ -6,42 +6,36 @@
 
 bool led_mode[pins::kRowNum][pins::kColNum] = {};
 
-void led_setup()
-{
+void led_setup() {
     int i;
-    for (i = 0; i < pins::kColNum; i++)
-    {
+    for (i = 0; i < pins::kColNum; i++) {
         pinMode(pins::kLedCols[i], OUTPUT);
     }
 
-    for (i = 0; i < pins::kRowNum; i++)
-    {
+    for (i = 0; i < pins::kRowNum; i++) {
         pinMode(pins::kLedRows[i], OUTPUT);
     }
 
-    for (i = 0; i < pins::kRowNum; i++)
-    {
+    for (i = 0; i < pins::kRowNum; i++) {
         digitalWrite(pins::kLedRows[i], HIGH);
     }
 
-    for (i = 0; i < pins::kColNum; i++)
-    {
+    for (i = 0; i < pins::kColNum; i++) {
         digitalWrite(pins::kLedCols[i], LOW);
     }
 }
 
-void clear_led_mode()
-{
+void clear_led_mode() {
     int i, j;
-    for (i = 0; i < pins::kRowNum; i++)
-    {
-        for (j = 0; j < pins::kColNum; j++)
-        {
+    for (i = 0; i < pins::kRowNum; i++) {
+        for (j = 0; j < pins::kColNum; j++) {
             led_mode[i][j] = false;
         }
     }
 }
 
 void update_step_led() {}
+
+void update_track_led() {}
 
 void scan_led() {}
