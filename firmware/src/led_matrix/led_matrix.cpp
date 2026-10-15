@@ -2,7 +2,9 @@
 
 #include <Arduino.h>
 
+#include "i2s_speaker/i2s_speaker.hpp"
 #include "pins.hpp"
+#include "sequence_manager/sequence_manager.hpp"
 
 bool led_mode[pins::kRowNum][pins::kColNum] = {};
 
