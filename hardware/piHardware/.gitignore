@@ -1,0 +1,38 @@
+
+# バックアップ・自動保存
+*-backups/
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.sch-bak
+*-save.pro
+*-save.kicad_pcb
+_autosave-*
+\#auto_saved_files#
+*~
+*.000
+*.tmp
+
+# ローカル履歴 (KiCad 9 以降)
+.history/
+
+# ロックファイル
+~*.lck
+
+# 個人ごとの表示設定 (レイヤー表示・ウィンドウ状態など)
+*.kicad_prl
+
+# フットプリントキャッシュ
+fp-info-cache
+
+# ネットリスト
+*.net
+
+# 自動配線 (Freerouting など) の中間ファイル
+*.dsn
+*.ses
+
+# BOM 出力
+*.xml
+*.csv
