@@ -32,12 +32,12 @@ void display_print() {
 }
 
 
-struct Position {
+struct position {
     int x;
     int y;
 };
 
-Position getBlockPos(int step, int instrument) {
+position get_block_pos(int step, int instrument) {
     constexpr int X_o = 2 + 62;
     constexpr int Y_o = 2;
     constexpr int ROW_LENGTH = 8;
@@ -55,8 +55,8 @@ Position getBlockPos(int step, int instrument) {
 }
 
 
-void drawBlock(int step, int instrument, uint16_t color) {
-    Position p = getBlockPos(step, instrument);
+void draw_block(int step, int instrument, uint16_t color) {
+    position p = get_block_pos(step, instrument);
     constexpr int BLOCK_W = 10;
     constexpr int BLOCK_H = 10;
 
@@ -64,13 +64,13 @@ void drawBlock(int step, int instrument, uint16_t color) {
     tft.drawRect(p.x, p.y, BLOCK_W, BLOCK_H, ST77XX_WHITE);
 }
 
-void drawAllBlocks() {
+void draw_all_blocks() {
     constexpr int NUM_INSTRUMENTS = 5;
     constexpr int NUM_STEPS = 16;
 
     for (int i = 0; i < NUM_INSTRUMENTS; i++) {
         for (int j = 0; j < NUM_STEPS; j++) {
-            drawBlock(j, i, ST77XX_BLACK);
+            draw_block(j, i, ST77XX_BLACK);
         }
     }
 }
