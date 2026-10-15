@@ -9,10 +9,13 @@
 
 void setup() {
     setup_display();
-    tft.setCursor(0, 0);
-
+    draw_all_blocks();
+  
     Serial.begin(115200);
     setup_buttons();
 }
 
-void loop() { poll_buttons(); }
+
+void loop() {
+    poll_buttons();
+}
