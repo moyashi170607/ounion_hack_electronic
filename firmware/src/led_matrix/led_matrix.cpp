@@ -1,0 +1,43 @@
+#include "led_matrix.hpp"
+
+#include <Arduino.h>
+
+#include "i2s_speaker/i2s_speaker.hpp"
+#include "pins.hpp"
+#include "sequence_manager/sequence_manager.hpp"
+
+bool led_mode[pins::kRowNum][pins::kColNum] = {};
+
+void led_setup() {
+    int i;
+    for (i = 0; i < pins::kColNum; i++) {
+        pinMode(pins::kLedCols[i], OUTPUT);
+    }
+
+    for (i = 0; i < pins::kRowNum; i++) {
+        pinMode(pins::kLedRows[i], OUTPUT);
+    }
+
+    for (i = 0; i < pins::kRowNum; i++) {
+        digitalWrite(pins::kLedRows[i], HIGH);
+    }
+
+    for (i = 0; i < pins::kColNum; i++) {
+        digitalWrite(pins::kLedCols[i], LOW);
+    }
+}
+
+void clear_led_mode() {
+    int i, j;
+    for (i = 0; i < pins::kRowNum; i++) {
+        for (j = 0; j < pins::kColNum; j++) {
+            led_mode[i][j] = false;
+        }
+    }
+}
+
+void update_step_led() {}
+
+void update_track_led() {}
+
+void scan_led() {}

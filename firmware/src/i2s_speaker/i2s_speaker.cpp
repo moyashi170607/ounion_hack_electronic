@@ -6,17 +6,27 @@
 #include "wav.hpp"
 
 Track tracks[kTracks];
-volatile bool pattern[kTracks][kSteps];
 volatile uint16_t bpm = 120;
 
 namespace {
 
 I2S i2s(OUTPUT);
 
+/// @brief 今鳴らしているステップ
+/// @note コア1が書き、コア0が読む
+volatile uint8_t step = kSteps - 1;
+
 /// @brief I2S へは kSampleRate の何倍で出すか
-/// @note PCM5102A は 22.05kHz を正式にサポートしておらず無音になることがあるので、
-///       各サンプルを2回ずつ送って 44.1kHz で出す
+/// @note PCM5102A は 22.05kHzを
+/// 正式にサポートしておらず無音になることがあるので、
+/// 各サンプルを2回ずつ送って 44.1kHz で出す
 constexpr uint32_t kOversample = 2;
+
+/// @brief
+/// ボタンが押されたときに即座に音を鳴らす処理が予約される。
+/// その予約が各トラックごとに管理
+/// あるならtrue ないならfalse
+volatile bool trigger_request[kTracks];
 
 /// @brief pos フレーム目を16bitの L/R にそろえて取り出す
 void read_frame(const Track& tr, uint32_t pos, int32_t& l, int32_t& r) {
@@ -26,6 +36,8 @@ void read_frame(const Track& tr, uint32_t pos, int32_t& l, int32_t& r) {
 }
 
 }  // namespace
+
+uint8_t current_step() { return step; }
 
 bool load_track(size_t t, const char* path) {
     if (t >= kTracks) return false;
@@ -64,6 +76,13 @@ bool load_track(size_t t, const char* path) {
     return true;
 }
 
+void trigger_track(uint8_t t) {
+    // トラック数の上限を超えた数字が来たら弾く
+    if (t > kTracks) return;
+    // 鳴らす予約を追加
+    trigger_request[t] = true;
+}
+
 void audio_setup() {
     i2s.setBCLK(pins::kDacBck);  // LRCLK は BCLK+1
     i2s.setDATA(pins::kDacDin);
@@ -73,16 +92,26 @@ void audio_setup() {
 }
 
 void audio_loop() {
+    // 各トラックを確認して、trigger_requestがtrueなら音声を再生する
+    for (size_t t = 0; t < kTracks; t++) {
+        if (trigger_request[t]) {
+            // 予約をfalseに戻す
+            trigger_request[t] = false;
+            // posを0にするとその後ろの処理で再生される
+            tracks[t].pos = 0;
+        }
+    }
+
     // 1ステップ = kSampleRate*60/(bpm*4) サンプル。
     // 割り切れない端数も持ち越すのでテンポがずれない
     static uint32_t phase = kSampleRate * 60;
-    static uint32_t step = kSteps - 1;
     phase += bpm * 4;
+
     if (phase >= kSampleRate * 60) {
         phase -= kSampleRate * 60;
         step = (step + 1) % kSteps;
         for (size_t t = 0; t < kTracks; t++)
-            if (pattern[t][step]) tracks[t].pos = 0;  // 頭から鳴らし直す
+            if (is_step_on(t, step)) tracks[t].pos = 0;  // 頭から鳴らし直す
     }
 
     int32_t mixL = 0;
