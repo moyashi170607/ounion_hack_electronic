@@ -4,6 +4,7 @@
 #include <SPI.h>
 
 #include "pins.hpp"
+#include "sequence_manager/sequence_manager.hpp"
 
 Adafruit_ST7735 tft(&pins::kTftSpi, pins::kTftCs, pins::kTftDc, pins::kTftRst);
 
@@ -74,3 +75,5 @@ void draw_all_blocks() {
         }
     }
 }
+
+void update_block() {}
