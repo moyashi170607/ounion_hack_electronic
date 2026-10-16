@@ -36,3 +36,6 @@ fp-info-cache
 # BOM 出力
 *.xml
 *.csv
+
+#発注用ファイル
+/pcb/
