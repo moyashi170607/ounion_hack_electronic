@@ -1,7 +1,7 @@
 #include "led_matrix.hpp"
-
+#include "i2s_speaker/i2s_speaker.hpp"
 #include <Arduino.h>
-
+#include "sequence_manager/sequence_manager.hpp"
 #include "pins.hpp"
 
 bool led_mode[pins::kRowNum][pins::kColNum] = {};
@@ -45,7 +45,8 @@ void clear_led_mode()
 void update_step_led()
 {
     int i;
-    for (i = 0; i < 16; i++)
+
+    for (i = 0; i < kSteps; i++)
     {
 
         const pins::LedPos &pos = pins::kStepLeds[i];
