@@ -39,6 +39,11 @@ struct Position {
     int y;
 };
 
+constexpr int BLOCK_W = 10;
+constexpr int BLOCK_H = 10;
+constexpr int NUM_INSTRUMENTS = 5;
+constexpr int NUM_STEPS = 16;
+
 Position get_block_pos(int step, int instrument) {
     constexpr int X_o = 2 + 62;
     constexpr int Y_o = 2;
@@ -58,17 +63,12 @@ Position get_block_pos(int step, int instrument) {
 
 void draw_block(int step, int instrument, uint16_t color) {
     Position p = get_block_pos(step, instrument);
-    constexpr int BLOCK_W = 10;
-    constexpr int BLOCK_H = 10;
 
     tft.fillRect(p.x, p.y, BLOCK_W, BLOCK_H, color);
     tft.drawRect(p.x, p.y, BLOCK_W, BLOCK_H, ST77XX_WHITE);
 }
 
 void draw_all_blocks() {
-    constexpr int NUM_INSTRUMENTS = 5;
-    constexpr int NUM_STEPS = 16;
-
     for (int i = 0; i < NUM_INSTRUMENTS; i++) {
         for (int j = 0; j < NUM_STEPS; j++) {
             draw_block(j, i, ST77XX_BLACK);
@@ -76,4 +76,27 @@ void draw_all_blocks() {
     }
 }
 
-void update_block() {}
+// トラックの状態に合わせて四角形の色が変わる
+// is_step_on(uint8_t track, uint8_t step);で指定したtrack（楽器）の指定したstepがONかOFFか取得
+void update_block() {
+    constexpr int STEP_COLOR = ST77XX_GREEN;
+
+    static bool prev_state[NUM_INSTRUMENTS][NUM_STEPS] = {};
+
+    for (int track = 0; track < NUM_INSTRUMENTS; track++) {
+        for (int step = 0; step < NUM_STEPS; step++) {
+
+            bool current_state = is_step_on(track, step); // 各ブロックのステップがON/OFFかを取得
+
+            if (current_state == prev_state[track][step]) {
+                continue;
+            }
+
+            // 状態が変化した場合のみ描画を更新
+            prev_state[track][step] = current_state;
+
+            uint16_t color = current_state? STEP_COLOR : ST77XX_BLACK;
+            draw_block(step, track, color); // 枠線を描画
+        }
+    }
+}
