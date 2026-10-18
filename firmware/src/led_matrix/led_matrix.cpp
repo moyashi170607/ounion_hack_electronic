@@ -62,6 +62,10 @@ void update_step_led()
     }
 }
 
+void update_track_led(){
+    
+}
+
 void scan_led()
 {
 }
