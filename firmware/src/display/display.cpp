@@ -41,38 +41,38 @@ struct Position {
 
 constexpr int BLOCK_W = 10;
 constexpr int BLOCK_H = 10;
-constexpr int NUM_INSTRUMENTS = 5;
-constexpr int NUM_STEPS = 16;
+constexpr int NUM_TRACKS = kTracks;
+constexpr int NUM_STEPS = kSteps;
 
 constexpr int STEP_COLOR = ST77XX_GREEN;
-static bool prev_state[NUM_INSTRUMENTS][NUM_STEPS] = {};
+static bool prev_state[NUM_TRACKS][NUM_STEPS] = {};
 
-Position get_block_pos(int step, int instrument) {
+Position get_block_pos(int step, int track) {
     constexpr int X_o = 2 + 62;
     constexpr int Y_o = 2;
     constexpr int ROW_LENGTH = 8;
     constexpr int INTERVAL_X = 12;
     constexpr int INTERVAL_Y = 12;
-    constexpr int INST_SPACE_Y = INTERVAL_Y * 2 + 2;
+    constexpr int TRACK_SPACE_Y = INTERVAL_Y * 2 + 2;
 
     int col = step % ROW_LENGTH;     // 0〜7
     int subRow = step / ROW_LENGTH;  // 0 or 1
 
     int x = X_o + col * INTERVAL_X;
-    int y = Y_o + subRow * INTERVAL_Y + instrument * INST_SPACE_Y;
+    int y = Y_o + subRow * INTERVAL_Y + track * TRACK_SPACE_Y;
 
     return {x, y};
 }
 
-void draw_block(int step, int instrument, uint16_t color) {
-    Position p = get_block_pos(step, instrument);
+void draw_block(int step, int track, uint16_t color) {
+    Position p = get_block_pos(step, track);
 
     tft.fillRect(p.x, p.y, BLOCK_W, BLOCK_H, color);
     tft.drawRect(p.x, p.y, BLOCK_W, BLOCK_H, ST77XX_WHITE);
 }
 
 void draw_all_blocks() {
-    for (int i = 0; i < NUM_INSTRUMENTS; i++) {
+    for (int i = 0; i < NUM_TRACKS; i++) {
         for (int j = 0; j < NUM_STEPS; j++) {
             draw_block(j, i, ST77XX_BLACK);
         }
@@ -82,7 +82,7 @@ void draw_all_blocks() {
 // トラックの状態に合わせて四角形の色が変わる
 // is_step_on(uint8_t track, uint8_t step);で指定したtrack（楽器）の指定したstepがONかOFFか取得
 void update_block() {
-    for (int track = 0; track < NUM_INSTRUMENTS; track++) {
+    for (int track = 0; track < NUM_TRACKS; track++) {
         for (int step = 0; step < NUM_STEPS; step++) {
 
             bool current_state = is_step_on(track, step); // 各ブロックのステップがON/OFFかを取得
