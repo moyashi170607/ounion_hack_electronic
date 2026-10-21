@@ -64,14 +64,14 @@ void update_step_led()
 
 void update_track_led()
 {
-    int i, j;
-    j = current_step();
+    int i,  step;
+    step = current_step();
     for (i = 0; i < kTracks; i++)
     {
 
         const pins::LedPos &trackspos = pins::kSoundLeds[i];
 
-        if (is_step_on(i, j) == true)
+        if (is_step_on(i, step) == true)
         {
 
             led_mode[trackspos.row][trackspos.col] = true;
