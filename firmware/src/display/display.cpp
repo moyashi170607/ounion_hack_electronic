@@ -51,8 +51,8 @@ Position get_block_pos(int step, int track) {
     constexpr int X_o = 2 + 62;
     constexpr int Y_o = 2;
     constexpr int ROW_LENGTH = 8;
-    constexpr int INTERVAL_X = 12;
-    constexpr int INTERVAL_Y = 12;
+    constexpr int INTERVAL_X = BLOCK_W + 2;
+    constexpr int INTERVAL_Y = BLOCK_H + 2;
     constexpr int TRACK_SPACE_Y = INTERVAL_Y * 2 + 2;
 
     int col = step % ROW_LENGTH;     // 0〜7
