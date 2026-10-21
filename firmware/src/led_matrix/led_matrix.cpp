@@ -62,26 +62,24 @@ void update_step_led()
     }
 }
 
-void update_track_led();
+void update_track_led()
 {
-    int i, j, t;
+    int i, j;
+    j = current_step();
     for (i = 0; i < kTracks; i++)
     {
-        for (j = 0; j < kSteps; j++)
+
+        const pins::LedPos &trackspos = pins::kSoundLeds[i];
+
+        if (is_step_on(i, j) == true)
         {
-            const pins::LedPos &pos = pins::kSoundLeds[i];
-            const pins::LedPos &pos = pins::kStepLeds[j];
 
-            if (is_step_on(i, current_step()) == true)
-            {
+            led_mode[trackspos.row][trackspos.col] = true;
+        }
+        else
+        {
 
-                led_mode[pos.row][pos.col] = true;
-            }
-            else
-            {
-
-                led_mode[pos.row][pos.col] = false;
-            }
+            led_mode[trackspos.row][trackspos.col] = false;
         }
     }
 }
