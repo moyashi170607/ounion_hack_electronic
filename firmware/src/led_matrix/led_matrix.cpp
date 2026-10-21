@@ -8,7 +8,8 @@
 
 volatile bool led_mode[pins::kRowNum][pins::kColNum] = {};
 
-void led_setup() {
+void led_setup()
+{
     int i;
     for (i = 0; i < pins::kColNum; i++) {
         pinMode(pins::kLedCols[i], OUTPUT);
@@ -27,7 +28,8 @@ void led_setup() {
     }
 }
 
-void clear_led_mode() {
+void clear_led_mode()
+{
     int i, j;
     for (i = 0; i < pins::kRowNum; i++) {
         for (j = 0; j < pins::kColNum; j++) {
@@ -36,7 +38,8 @@ void clear_led_mode() {
     }
 }
 
-void update_step_led() {
+void update_step_led()
+{
     int i;
 
     for (i = 0; i < kSteps; i++) {
@@ -50,7 +53,8 @@ void update_step_led() {
     }
 }
 
-void update_track_led() {
+void update_track_led()
+{
     int i, step;
     step = current_step();
     for (i = 0; i < kTracks; i++) {
@@ -64,7 +68,8 @@ void update_track_led() {
     }
 }
 
-void scan_led() {
+void scan_led()
+{
     // 現在走査中の行
     static size_t row = 0;
 
