@@ -44,6 +44,9 @@ constexpr int BLOCK_H = 10;
 constexpr int NUM_INSTRUMENTS = 5;
 constexpr int NUM_STEPS = 16;
 
+constexpr int STEP_COLOR = ST77XX_GREEN;
+static bool prev_state[NUM_INSTRUMENTS][NUM_STEPS] = {};
+
 Position get_block_pos(int step, int instrument) {
     constexpr int X_o = 2 + 62;
     constexpr int Y_o = 2;
@@ -79,10 +82,6 @@ void draw_all_blocks() {
 // トラックの状態に合わせて四角形の色が変わる
 // is_step_on(uint8_t track, uint8_t step);で指定したtrack（楽器）の指定したstepがONかOFFか取得
 void update_block() {
-    constexpr int STEP_COLOR = ST77XX_GREEN;
-
-    static bool prev_state[NUM_INSTRUMENTS][NUM_STEPS] = {};
-
     for (int track = 0; track < NUM_INSTRUMENTS; track++) {
         for (int step = 0; step < NUM_STEPS; step++) {
 
