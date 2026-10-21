@@ -1,10 +1,12 @@
 #include "led_matrix.hpp"
-#include "i2s_speaker/i2s_speaker.hpp"
-#include <Arduino.h>
-#include "sequence_manager/sequence_manager.hpp"
-#include "pins.hpp"
 
-bool led_mode[pins::kRowNum][pins::kColNum] = {};
+#include <Arduino.h>
+
+#include "i2s_speaker/i2s_speaker.hpp"
+#include "pins.hpp"
+#include "sequence_manager/sequence_manager.hpp"
+
+volatile bool led_mode[pins::kRowNum][pins::kColNum] = {};
 
 void led_setup()
 {
@@ -48,8 +50,7 @@ void update_step_led()
 
     for (i = 0; i < kSteps; i++)
     {
-
-        const pins::LedPos &pos = pins::kStepLeds[i];
+        const pins::LedPos& pos = pins::kStepLeds[i];
 
         if (i == current_step())
         {
@@ -64,21 +65,18 @@ void update_step_led()
 
 void update_track_led()
 {
-    int i,  step;
+    int i, step;
     step = current_step();
     for (i = 0; i < kTracks; i++)
     {
-
-        const pins::LedPos &trackspos = pins::kSoundLeds[i];
+        const pins::LedPos& trackspos = pins::kSoundLeds[i];
 
         if (is_step_on(i, step) == true)
         {
-
             led_mode[trackspos.row][trackspos.col] = true;
         }
         else
         {
-
             led_mode[trackspos.row][trackspos.col] = false;
         }
     }
@@ -86,4 +84,23 @@ void update_track_led()
 
 void scan_led()
 {
+    // 現在走査中の行
+    // staticにすると変数の値が持ち越される
+    static size_t row = 0;
+
+    // 一度全部光らない状態にする
+    digitalWrite(pins::kLedRows[row], HIGH);
+
+    // row + 1をpins::kRowNumで割ったあまりが代入される
+    // つまり最後の行まで行ったら再び0に戻ってくる
+    row = (row + 1) % pins::kRowNum;
+
+    // led_modeに対応した列を光る状態にする
+    for (size_t col = 0; col < pins::kColNum; col++)
+    {
+        digitalWrite(pins::kLedCols[col], led_mode[row][col] ? HIGH : LOW);
+    }
+
+    // 光らせる
+    digitalWrite(pins::kLedRows[row], LOW);
 }
