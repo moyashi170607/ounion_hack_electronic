@@ -74,7 +74,7 @@ void draw_block(int step, int track, uint16_t color) {
 void draw_all_blocks() {
     for (int i = 0; i < NUM_TRACKS; i++) {
         for (int j = 0; j < NUM_STEPS; j++) {
-            draw_block(j, i, ST77XX_BLACK);
+            update_block();
         }
     }
 }
