@@ -72,9 +72,19 @@ void draw_block(int step, int track, uint16_t color) {
 }
 
 void draw_all_blocks() {
-    for (int i = 0; i < NUM_TRACKS; i++) {
-        for (int j = 0; j < NUM_STEPS; j++) {
-            update_block();
+    for (int track = 0; track < NUM_TRACKS; track++) {
+        for (int step = 0; step < NUM_STEPS; step++) {
+
+            bool current_state = is_step_on(track, step); // 各ブロックのステップがON/OFFかを取得
+
+            if (current_state == prev_state[track][step]) {
+                continue;
+            }
+
+            // 状態が変化した場合のみ描画を更新
+            prev_state[track][step] = current_state;
+
+            draw_block(step, track, ST77XX_BLACK);
         }
     }
 }
