@@ -8,11 +8,12 @@
 #include "sequence_manager/sequence_manager.hpp"
 
 void setup() {
+    setup_buttons();
+    
     setup_display();
     draw_all_blocks();
   
     Serial.begin(115200);
-    setup_buttons();
 }
 
 
