@@ -10,6 +10,9 @@ volatile bool pattern[kTracks][kSteps];
 
 }  // namespace
 
+bool hidden_mode = false;
+
+
 void toggle_step(uint8_t track, uint8_t step) {
     if (track >= kTracks || step >= kSteps) return;
     pattern[track][step] = !pattern[track][step];
@@ -52,6 +55,3 @@ void pressed_switch(Button button) {
             break;
     }
 }
-
-
-bool hidden_mode = false;
