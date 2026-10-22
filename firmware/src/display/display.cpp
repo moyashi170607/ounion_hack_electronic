@@ -71,26 +71,19 @@ void draw_block(int step, int track, uint16_t color) {
     tft.drawRect(p.x, p.y, BLOCK_W, BLOCK_H, ST77XX_WHITE);
 }
 
+// 全部オフの状態でのブロックの描画
 void draw_all_blocks() {
     for (int track = 0; track < NUM_TRACKS; track++) {
         for (int step = 0; step < NUM_STEPS; step++) {
 
-            bool current_state = is_step_on(track, step); // 各ブロックのステップがON/OFFかを取得
-
-            if (current_state == prev_state[track][step]) {
-                continue;
-            }
-
-            // 状態が変化した場合のみ描画を更新
-            prev_state[track][step] = current_state;
-
             draw_block(step, track, ST77XX_BLACK);
+            prev_state[track][step] = false;
         }
     }
 }
 
-// トラックの状態に合わせて四角形の色が変わる
-// is_step_on(uint8_t track, uint8_t step);で指定したtrack（楽器）の指定したstepがONかOFFか取得
+
+// 実際のステップの状態と同期させ，差分となるブロックのみ色を変える
 void update_block() {
     for (int track = 0; track < NUM_TRACKS; track++) {
         for (int step = 0; step < NUM_STEPS; step++) {
