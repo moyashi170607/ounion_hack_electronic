@@ -33,11 +33,24 @@ void setup_buttons() {
         input.changedAt = millis();
     }
 
-    hidden_mode =
-        digitalRead(pins::kSwt1) == LOW &&
-        digitalRead(pins::kSwt2) == LOW &&
-        digitalRead(pins::kSwt3) == LOW;
+    hidden_mode = false;
+
+    const unsigned long startedAt millis();
+
+    while (millis() - startedAt < 50) {
+        const bool allPressed =
+            digitalRead(pins::kSwt1) == LOW &&
+            digitalRead(pins::kSwt2) == LOW &&
+            digitalRead(pins::kSwt3) == LOW;
+
+        if (!allPressed) {
+            return;
+        }    
+        delay(1);
+    }
+    hidden_mode = true;
 }
+
 
 void poll_buttons() {
     const unsigned long now = millis();
