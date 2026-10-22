@@ -35,7 +35,7 @@ void setup_buttons() {
 
     hidden_mode = false;
 
-    const unsigned long startedAt millis();
+    const unsigned long startedAt = millis();
 
     while (millis() - startedAt < 50) {
         const bool allPressed =
