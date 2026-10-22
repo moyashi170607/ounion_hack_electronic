@@ -28,4 +28,6 @@ bool is_step_on(uint8_t track, uint8_t step);
 /// @param button
 void pressed_switch(Button button);
 
+extern bool hidden_mode;
+
 #endif  // SEQUENCE_MANAGER_HPP

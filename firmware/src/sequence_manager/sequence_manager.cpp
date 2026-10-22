@@ -52,3 +52,6 @@ void pressed_switch(Button button) {
             break;
     }
 }
+
+
+bool hidden_mode = false;

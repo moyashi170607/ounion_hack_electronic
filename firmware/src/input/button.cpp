@@ -32,6 +32,11 @@ void setup_buttons() {
         input.stableState = input.lastRawState;
         input.changedAt = millis();
     }
+
+    hidden_mode =
+        digitalRead(pins::kSwt1) == LOW &&
+        digitalRead(pins::kSwt2) == LOW &&
+        digitalRead(pins::kSwt3) == LOW;
 }
 
 void poll_buttons() {
