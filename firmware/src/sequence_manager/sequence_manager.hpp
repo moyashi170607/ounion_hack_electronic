@@ -17,6 +17,8 @@ enum class Button : uint8_t {
     SOUND4,
 };
 
+extern bool hidden_mode;
+
 /// @brief 指定したトラック・ステップの ON/OFF を反転する
 void toggle_step(uint8_t track, uint8_t step);
 
@@ -27,7 +29,5 @@ bool is_step_on(uint8_t track, uint8_t step);
 /// @brief ボタンが押されたことを受け取る
 /// @param button
 void pressed_switch(Button button);
-
-extern bool hidden_mode;
 
 #endif  // SEQUENCE_MANAGER_HPP
