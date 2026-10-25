@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <pico/time.h>
 
 #include "display/display.hpp"
 #include "i2s_speaker/i2s_speaker.hpp"
@@ -7,16 +8,30 @@
 #include "pins.hpp"
 #include "sequence_manager/sequence_manager.hpp"
 
+namespace {
+repeating_timer_t led_timer;
+}
+
+bool on_led_timer(repeating_timer* t) {
+    scan_led();
+    return true;
+}
+
 void setup() {
     setup_buttons();
     
     setup_display();
     draw_all_blocks();
-  
+
     Serial.begin(115200);
 }
 
+    led_setup();
+    add_repeating_timer_us(-1000, on_led_timer, nullptr, &led_timer);
+}
 
 void loop() {
     poll_buttons();
+    update_step_led();
+    update_track_led();
 }
