@@ -19,12 +19,11 @@ bool on_led_timer(repeating_timer* t) {
 
 void setup() {
     setup_buttons();
-    
+
     setup_display();
     draw_all_blocks();
 
     Serial.begin(115200);
-}
 
     led_setup();
     add_repeating_timer_us(-1000, on_led_timer, nullptr, &led_timer);
@@ -34,4 +33,5 @@ void loop() {
     poll_buttons();
     update_step_led();
     update_track_led();
+    update_block();
 }

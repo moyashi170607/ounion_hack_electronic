@@ -10,7 +10,6 @@
 namespace pins {
 
 // LCD SPI
-// TODO: GPIOの割り当ては再度検討する必要あり
 // 参照は const 変数と違って内部リンケージにならないので inline が必要
 inline constexpr auto& kTftSpi = SPI1;
 constexpr pin_size_t kTftSck = 10;   // SCK
