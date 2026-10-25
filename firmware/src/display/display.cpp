@@ -39,41 +39,66 @@ struct Position {
     int y;
 };
 
-Position get_block_pos(int step, int instrument) {
+constexpr int BLOCK_W = 10;
+constexpr int BLOCK_H = 10;
+constexpr int NUM_TRACKS = kTracks;
+constexpr int NUM_STEPS = kSteps;
+
+constexpr int STEP_COLOR = ST77XX_GREEN;
+static bool prev_state[NUM_TRACKS][NUM_STEPS] = {};
+
+Position get_block_pos(int step, int track) {
     constexpr int X_o = 2 + 62;
     constexpr int Y_o = 2;
     constexpr int ROW_LENGTH = 8;
-    constexpr int INTERVAL_X = 12;
-    constexpr int INTERVAL_Y = 12;
-    constexpr int INST_SPACE_Y = INTERVAL_Y * 2 + 2;
+    constexpr int INTERVAL_X = BLOCK_W + 2;
+    constexpr int INTERVAL_Y = BLOCK_H + 2;
+    constexpr int TRACK_SPACE_Y = INTERVAL_Y * 2 + 2;
 
     int col = step % ROW_LENGTH;     // 0〜7
     int subRow = step / ROW_LENGTH;  // 0 or 1
 
     int x = X_o + col * INTERVAL_X;
-    int y = Y_o + subRow * INTERVAL_Y + instrument * INST_SPACE_Y;
+    int y = Y_o + subRow * INTERVAL_Y + track * TRACK_SPACE_Y;
 
     return {x, y};
 }
 
-void draw_block(int step, int instrument, uint16_t color) {
-    Position p = get_block_pos(step, instrument);
-    constexpr int BLOCK_W = 10;
-    constexpr int BLOCK_H = 10;
+void draw_block(int step, int track, uint16_t color) {
+    Position p = get_block_pos(step, track);
 
     tft.fillRect(p.x, p.y, BLOCK_W, BLOCK_H, color);
     tft.drawRect(p.x, p.y, BLOCK_W, BLOCK_H, ST77XX_WHITE);
 }
 
+// 全部オフの状態でのブロックの描画
 void draw_all_blocks() {
-    constexpr int NUM_INSTRUMENTS = 5;
-    constexpr int NUM_STEPS = 16;
+    for (int track = 0; track < NUM_TRACKS; track++) {
+        for (int step = 0; step < NUM_STEPS; step++) {
 
-    for (int i = 0; i < NUM_INSTRUMENTS; i++) {
-        for (int j = 0; j < NUM_STEPS; j++) {
-            draw_block(j, i, ST77XX_BLACK);
+            draw_block(step, track, ST77XX_BLACK);
+            prev_state[track][step] = false;
         }
     }
 }
 
-void update_block() {}
+
+// 実際のステップの状態と同期させ，差分となるブロックのみ色を変える
+void update_block() {
+    for (int track = 0; track < NUM_TRACKS; track++) {
+        for (int step = 0; step < NUM_STEPS; step++) {
+
+            bool current_state = is_step_on(track, step); // 各ブロックのステップがON/OFFかを取得
+
+            if (current_state == prev_state[track][step]) {
+                continue;
+            }
+
+            // 状態が変化した場合のみ描画を更新
+            prev_state[track][step] = current_state;
+
+            uint16_t color = current_state? STEP_COLOR : ST77XX_BLACK;
+            draw_block(step, track, color); // 枠線を描画
+        }
+    }
+}
