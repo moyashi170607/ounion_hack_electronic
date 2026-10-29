@@ -20,6 +20,9 @@ bool on_led_timer(repeating_timer* t) {
 void setup() {
     setup_buttons();
 
+    // もう一つのコアにモードを伝える
+    rp2040.fifo.push(hidden_mode);
+
     setup_display();
     draw_all_blocks();
 
