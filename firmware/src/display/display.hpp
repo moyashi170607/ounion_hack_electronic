@@ -17,6 +17,9 @@ void display_print();
 void draw_block(int step, int instrument, uint16_t color);
 void draw_all_blocks();
 
+/// @brief 各トラックの横に音声のファイル名（拡張子なし）を描画する
+void draw_track_names();
+
 /// @brief 現在のトラックの状態に合わせて描画する
 void update_block();
 

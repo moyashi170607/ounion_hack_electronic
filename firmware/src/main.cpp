@@ -25,6 +25,7 @@ void setup() {
 
     setup_display();
     draw_all_blocks();
+    draw_track_names();
 
     Serial.begin(115200);
 

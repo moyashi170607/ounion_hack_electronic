@@ -6,7 +6,7 @@
 #include "wav.hpp"
 
 Track tracks[kTracks];
-volatile uint16_t bpm = 120;
+volatile uint16_t bpm = 100;
 
 namespace {
 
@@ -48,6 +48,9 @@ bool load_track(size_t t, const char* path) {
     // ミキサーは kSampleRate 固定で回すので、違うレートだと再生速度が狂う
     if (wav.sampleRate() != kSampleRate) return false;
 
+    // 16bit PCM 以外は変換が必要で、dr_wav の変換はスタックを使いすぎるので弾く
+    if (!wav.isPcm16()) return false;
+
     const uint16_t channels = wav.channels();
 
     // チャンネル数が1か2でなければ弾く
@@ -57,12 +60,27 @@ bool load_track(size_t t, const char* path) {
     // フレームが0なら弾く
     if (frames == 0) return false;
 
-    int16_t* buf =
-        static_cast<int16_t*>(malloc(frames * channels * sizeof(int16_t)));
+    // ヒープは約250KBしかないので、ステレオもモノラルにまとめて半分の量で持つ
+    int16_t* buf = static_cast<int16_t*>(malloc(frames * sizeof(int16_t)));
     if (!buf) return false;
 
-    // dr_wavで16bit符号付きにそろえる
-    const uint64_t n = wav.readFramesS16(buf, frames);
+    // 16bit PCM をそのまま読む
+    uint64_t n = 0;
+    if (channels == 1) {
+        n = wav.readFramesS16(buf, frames);
+    } else {
+        // L/R を少しずつ読んで平均をとる
+        constexpr uint64_t kChunk = 64;
+        int16_t chunk[kChunk * 2];
+        while (n < frames) {
+            const uint64_t want = (frames - n < kChunk) ? frames - n : kChunk;
+            const uint64_t got = wav.readFramesS16(chunk, want);
+            if (got == 0) break;
+            for (uint64_t i = 0; i < got; i++)
+                buf[n + i] = (chunk[i * 2] + chunk[i * 2 + 1]) / 2;
+            n += got;
+        }
+    }
     if (n == 0) {
         free(buf);
         return false;
@@ -70,7 +88,7 @@ bool load_track(size_t t, const char* path) {
 
     Track& tr = tracks[t];
     tr.data = buf;
-    tr.channels = channels;
+    tr.channels = 1;
     tr.frames = n;
     tr.pos = n;  // 停止状態から始める
     return true;

@@ -51,14 +51,21 @@ constexpr uint16_t CURRENT_FRAME_COLOR = ST77XX_RED;  // 現在のステップ�
 static bool prev_state[NUM_TRACKS][NUM_STEPS] = {};
 static int prev_step = -1;  // 枠を強調して描画済みのステップ（-1 はまだ無し）
 
-Position get_block_pos(int step, int track) {
-    constexpr int X_o = 2 + 62;
-    constexpr int Y_o = 2;
-    constexpr int ROW_LENGTH = 8;
-    constexpr int INTERVAL_X = BLOCK_W + 2;
-    constexpr int INTERVAL_Y = BLOCK_H + 2;
-    constexpr int TRACK_SPACE_Y = INTERVAL_Y * 2 + 2;
+constexpr int X_o = 2 + 62;
+constexpr int Y_o = 2;
+constexpr int ROW_LENGTH = 8;
+constexpr int INTERVAL_X = BLOCK_W + 2;
+constexpr int INTERVAL_Y = BLOCK_H + 2;
+constexpr int TRACK_SPACE_Y = INTERVAL_Y * 2 + 2;
 
+constexpr uint16_t NAME_COLOR = ST77XX_WHITE;
+constexpr int NAME_X = 2;
+constexpr int CHAR_W = 6;  // テキストサイズ1の1文字の幅（間隔込み）
+constexpr int CHAR_H = 8;
+// ブロックに被らずに書ける文字数
+constexpr size_t NAME_MAX_CHARS = (X_o - NAME_X) / CHAR_W;
+
+Position get_block_pos(int step, int track) {
     int col = step % ROW_LENGTH;     // 0〜7
     int subRow = step / ROW_LENGTH;  // 0 or 1
 
@@ -93,6 +100,31 @@ void draw_all_blocks() {
             draw_block(step, track, ST77XX_BLACK);
             prev_state[track][step] = false;
         }
+    }
+}
+
+// トラックの左に音声のファイル名を拡張子なしで描画する
+void draw_track_names() {
+    tft.setTextSize(1);
+    tft.setTextColor(NAME_COLOR, ST77XX_BLACK);
+    tft.setTextWrap(false);
+
+    for (int track = 0; track < NUM_TRACKS; track++) {
+        const char* path = sound_path(track, hidden_mode);
+        if (!path) continue;
+
+        // "/snare1.wav" から "snare1" を取り出す
+        const char* name = strrchr(path, '/');
+        name = name ? name + 1 : path;
+        const char* ext = strrchr(name, '.');
+        size_t len = ext ? ext - name : strlen(name);
+        if (len > NAME_MAX_CHARS) len = NAME_MAX_CHARS;
+
+        // 2段あるブロックの縦の真ん中にそろえる
+        int y = Y_o + track * TRACK_SPACE_Y +
+                (INTERVAL_Y + BLOCK_H - CHAR_H) / 2;
+        tft.setCursor(NAME_X, y);
+        tft.write(name, len);
     }
 }
 

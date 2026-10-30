@@ -8,10 +8,19 @@ namespace {
 /// @note コア0が書き、コア1が読む
 volatile bool pattern[kTracks][kSteps];
 
+const char* const kNormalSounds[kTracks] = {
+    "/snare1.wav", "/snare2.wav", "/crap.wav", "/pon.wav", "/eguitar.wav"};
+
+const char* const kHiddenSounds[kTracks] = {};
+
 }  // namespace
 
 bool hidden_mode = false;
 
+const char* sound_path(uint8_t track, bool hidden) {
+    if (track >= kTracks) return nullptr;
+    return hidden ? kHiddenSounds[track] : kNormalSounds[track];
+}
 
 void toggle_step(uint8_t track, uint8_t step) {
     if (track >= kTracks || step >= kSteps) return;

@@ -19,6 +19,11 @@ enum class Button : uint8_t {
 
 extern bool hidden_mode;
 
+/// @brief トラックに割り当てる WAV ファイルのパスを返す
+/// @param hidden hidden モードの音を使うかどうか
+/// @return 割り当てが無ければ nullptr
+const char* sound_path(uint8_t track, bool hidden);
+
 /// @brief 指定したトラック・ステップの ON/OFF を反転する
 void toggle_step(uint8_t track, uint8_t step);
 

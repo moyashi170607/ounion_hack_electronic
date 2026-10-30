@@ -24,12 +24,20 @@ class WavFile {
 
     /// @brief 再生位置を先頭フレームに戻す
     bool rewind() { return drwav_seek_to_pcm_frame(&wav_, 0); }
-    /// @brief 16bit符号付きに変換して最大 frames フレーム読む
+    /// @brief 16bit PCM かどうか
+    bool isPcm16() const {
+        return wav_.translatedFormatTag == DR_WAVE_FORMAT_PCM &&
+               wav_.bitsPerSample == 16;
+    }
+
+    /// @brief 16bit PCM のファイルから変換なしで最大 frames フレーム読む
+    /// @note drwav_read_pcm_frames_s16 は中で4KBのバッファを確保し、
+    /// その先の読み込みでもさらに4KB使うので core1 のスタック(8KB)を溢れさせる
     /// @param buf frames * channels() 個の int16_t が入る領域（ステレオは L, R
     /// の交互）
     /// @return 読めたフレーム数。0 なら終端
     uint64_t readFramesS16(int16_t* buf, uint64_t frames) {
-        return drwav_read_pcm_frames_s16(&wav_, frames, buf);
+        return drwav_read_pcm_frames(&wav_, frames, buf);
     }
 
     uint16_t channels() const { return wav_.channels; }
